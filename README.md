@@ -4,7 +4,7 @@ The overview for a browser extension
 ## Overview
 ![overview](./blockdiagram.png)
 
-Absolutely! Messaging between `background.js` and `content.js` is essential in Chrome extensions to enable coordinated behavior across components. Here's a breakdown of how they communicate 👇
+Messaging between `background.js` and `content.js` is essential in Chrome extensions to enable coordinated behavior across components. Here's a breakdown of how they communicate 👇
 
 ---
 
