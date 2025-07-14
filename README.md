@@ -8,6 +8,23 @@ The overview for a browser extension
 
 An example of direct DOM manipulation of the index.php (public facing page) from content.js (extension file),
 
+in the **manifest.json**,
+```json
+...
+ "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "scripts/content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+...
+```
+
 in the **index.php**,
 ```html
 <p>
