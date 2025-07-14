@@ -8,7 +8,7 @@ The overview for a browser extension
 
 An example of direct DOM manipulation of the index.php (public facing page) from content.js (extension file),
 
-in the index.php,
+in the **index.php**,
 ```html
 <p>
   <label for="userid"><b>User ID</b></label>
@@ -23,7 +23,7 @@ in the index.php,
 </script>
 ```
 
-in the content.js,
+in the **content.js**,
 ```html
 <script>
 window.addEventListener("message", async function (event) {
