@@ -4,11 +4,28 @@ The overview for a browser extension
 ![popup.html](./popup.png)
 
 ## Overview
-![overview](./blockdiagram.png)
+![overview](./updated-blockdiagram-with-flow.png)
 
-Messaging between `background.js` and `content.js` is essential in Chrome extensions to enable coordinated behavior across components. Here's a breakdown of how they communicate 👇
+### 🧩 Component Contexts & Relationships
+
+| Component       | Execution Context           | Access to `index.php` DOM | Window Access | Chrome API Access | Messaging Role |
+|----------------|------------------------------|----------------------------|---------------|-------------------|----------------|
+| `index.php`     | Public Web Page               | ✅ Full access             | ✅ Yes         | ❌ None            | 🟡 Receives `postMessage` from `content.js` |
+| `content.js`    | Injected into `index.php`     | ✅ Full access             | ✅ Yes         | ⚠️ Limited         | 🔄 Bi-directional with `background.js` and `popup.js` |
+| `background.js` | Extension Service Context     | ❌ No access               | ❌ No          | ✅ Full            | 🔄 Routing & persistent logic |
+| `popup.js`      | Runs in `popup.html`          | ❌ No access               | ✅ Yes         | ⚠️ Limited         | 🔄 Receives messages from `background.js` |
+
+### 🔀 Messaging Flow (Simplified)
+Though popup.js can send messages to content.js via the window.postMessage().
+
+```plaintext
+index.php ←→ content.js ←→ background.js ←→ popup.js
+          ↑               ↑                    ↓
+       postMessage      sendMessage        sendMessage
+```
 
 ---
+
 
 ### 🔁 Messaging Overview
 
