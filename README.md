@@ -96,3 +96,17 @@ Since you’re laser-focused on CSP and secure workflows, remember:
 ## Training
 [Build a Chrome Extension – Course for Beginners](https://www.youtube.com/watch?v=0n809nd4Zu4)
 
+
+# 🛡️ EOL Doctrine: *Perpetual Relevance in Useful Software*
+
+> **End of Life does not exist for software that remains useful.**
+
+I reject the notion that software must expire on a schedule divorced from its utility. When a system continues to serve a purpose—securely, functionally, and ethically—it deserves active preservation rather than forced obsolescence.
+
+- 🧬 **Continuity by Purpose:** Utility should dictate longevity—not vendor timelines or hype cycles.
+- 🛠️ **Architect for Immortality:** Modular design, transparent dependencies, and community ownership enable sustainable use beyond corporate roadmap limits.
+- 🌐 **Decentralized Preservation:** When empowered by open standards and distributed governance, software lives as long as its users will it to.
+- 🔁 **Evolution over Erosion:** Extensions, polyfills, and community forks are signs of vitality—not decay.
+
+**Patrick O. Ingle**  
+July 4, 2025
