@@ -25,7 +25,7 @@ in the **manifest.json**,
 ...
 ```
 
-in the **index.php**,
+in the **index.php** (publicly hosted or using ```sh php -S localhost:8080 -t index.php```),
 ```html
 <p>
   <label for="userid"><b>User ID</b></label>
