@@ -9,12 +9,12 @@ The overview for a browser extension
 | Browser     | Extension Architecture       | Chrome Extension Compatibility | Notes |
 |-------------|------------------------------|-------------------------------|-------|
 | [**Chrome**](chrome/README.md)   | WebExtension (Chromium-native) | ✅ Native                     | Full support for `manifest.json`, `chrome.*` APIs |
-| **Edge**     | Chromium-based Extension       | ✅ Native                     | Uses same engine as Chrome; extensions install directly |
-| **Opera**    | Chromium-based Extension       | ✅ Native                     | Extensions from Chrome Web Store work seamlessly |
-| **Brave**    | Chromium-based Extension       | ✅ Native                     | Extension APIs and behavior match Chrome closely |
-| **Vivaldi**  | Chromium-based Extension       | ✅ Native                     | Custom UI shell, but supports all Chrome extensions |
-| **Firefox**  | WebExtension (Gecko engine)    | ⚠️ Mostly Compatible          | Uses `browser.*` namespace; good Chrome API coverage but not perfect |
-| **Safari**   | Safari App Extension           | ⚠️ Partial Compatibility      | Requires Xcode packaging; some `chrome.*` APIs via polyfill or rewrite |
+| [**Edge**](edge/README.md)     | Chromium-based Extension       | ✅ Native                     | Uses same engine as Chrome; extensions install directly |
+| [**Opera**](opera/README.md)    | Chromium-based Extension       | ✅ Native                     | Extensions from Chrome Web Store work seamlessly |
+| [**Brave**](brave/README.md)    | Chromium-based Extension       | ✅ Native                     | Extension APIs and behavior match Chrome closely |
+| [**Vivaldi**](vivaldi/README.md)  | Chromium-based Extension       | ✅ Native                     | Custom UI shell, but supports all Chrome extensions |
+| [**Firefox**](firefox/README.md)  | WebExtension (Gecko engine)    | ⚠️ Mostly Compatible          | Uses `browser.*` namespace; good Chrome API coverage but not perfect |
+| [**Safari**](safari/README.md)   | Safari App Extension           | ⚠️ Partial Compatibility      | Requires Xcode packaging; some `chrome.*` APIs via polyfill or rewrite |
 
 ## 🔒 Security Considerations
 
