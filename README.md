@@ -1,10 +1,10 @@
 # PressID Badge Browser Plugin (aka extension)
 The overview for a browser extension
 
-![popup.html](./popup.png)
+![popup.html](./images/popup.png)
 
 ## Overview
-![overview](./updated-blockdiagram-with-flow.png)
+![overview](./images/updated-blockdiagram-with-flow.png)
 
 ### 🧩 Component Contexts & Relationships
 
