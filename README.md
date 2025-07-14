@@ -3,6 +3,8 @@ The overview for a browser extension
 
 ![popup.html](./images/popup.png)
 
+Your Decentralized Identification (DiD) credentials are created using the verifiedpress.org command-line interface utility.
+
 **Browser Extension Compatibility Overview**
 
 | Browser     | Extension Architecture       | Chrome Extension Compatibility | Notes |
