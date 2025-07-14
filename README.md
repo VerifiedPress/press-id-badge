@@ -1,4 +1,4 @@
-# PressID Badge Browser Plugin (aka extension)
+# PressID Badge Browser Extension
 The overview for a browser extension
 
 ![popup.html](./images/popup.png)
