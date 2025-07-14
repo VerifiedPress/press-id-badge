@@ -72,7 +72,7 @@ window.addEventListener("message", async function (event) {
 </script>
 ```
 
-**Use Cases**
+**Use Cases for READONLY INPUT field**
 1. **Verified Identity Injection**
 - **Purpose**: *Populate the field with a verified Decentralized Identifier (DID) or credential.*
 - **Flow**: *Extension retrieves user's signed credential → content.js injects userid value.*
