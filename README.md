@@ -1,7 +1,7 @@
 # Press ID Badge Browser Extension
 The overview for a browser extension
 
-![popup.html](./images/screenshot-1.png)
+![sett1ngs](./images/screenshot-1.png) and ![signing](./images/screenshot-4.png)
 
 Your Decentralized Identification (DiD) credentials are created using the verifiedpress.org command-line interface utility.
 
