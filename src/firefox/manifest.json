@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Press ID Badge",
+  "version": "1.0.0",
+  "description": "Sign login requests with your DID key for accessing verifiedpress.org",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "notifications",
+    "identity",
+    "tabs",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
