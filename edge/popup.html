@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Press ID Badge</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <style>
+        body {
+            width: 300px;
+            padding: 16px;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SETTINGS METADATA -->
+    <div id="settings">
+        <h3 class="w3-blue">Press ID Badge</h3>
+        <fieldset>
+            <label for="did">DID</label>
+            <input type="text" class="w3-input w3-block w3-tiny" id="did" name="did" value="" />
+            <label for="privateKey">Private Key</label>
+            <textarea class="w3-input w3-block w3-tiny" rows="5" id="privateKey" name="privateKey"></textarea>
+            <button class="w3-button w3-block w3-black" id="save">Save</button>
+        </fieldset>
+        <p class="w3-tiny w3-center">&copy;2025 PRESSPAGE ENTERTAINMENT INC.<br />All rights reserved.</p>
+        <p class="w3-tiny w3-center"><a href="https://verifiedpress.org" target="_blank">Verified Press</a></p>
+    </div>
+    <!-- SIGNING -->
+    <div id="signing" style="display: none;">
+        <h3 class="w3-blue">Sign Login Request</h3>
+        <fieldset>
+            <label for="didText">DID</label>
+            <input type="text" id="didText" class="w3-input w3-block w3-light-grey" value="" readonly />
+            <input type="hidden" id="privateKeyPEM" value="">
+            <label for="messageText">Message</label>
+            <input type="text" id="messageText" class="w3-input w3-block w3-light-grey" value=""
+                readonly />
+            <button class="w3-button w3-blue w3-margin-top" id="signButton">Sign Message</button>
+            <div id="signatureBox" class="w3-panel w3-pale-green w3-margin-top" style="display:none;">
+                <h4>✅ Signature Generated</h4>
+                <textarea class="w3-input w3-border" id="signatureOutput" readonly></textarea>
+            </div>
+        </fieldset>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
