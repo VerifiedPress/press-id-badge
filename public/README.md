@@ -150,13 +150,29 @@ index.php ←→ content.js ←→ background.js ←→ popup.js
 ```
 
 # Developing with Press ID Badge Extension
-The **Press ID Badge** extension provides the mechanics to sign a message with a private key and then set a DOM object id with that signature. The minimum configuration for a public facing page with **Press ID Badge** extension are two input or hidden fields (*with value attribute*) with the assigned id's of "did" and "proof", case-sensitive.
+The **Press ID Badge** extension provides the mechanics to sign a message with a private key and then set a DOM object id with that signature. The minimum configuration for a public facing page with **Press ID Badge** extension are one input or hidden fields (*with value attribute*) with the assigned id's of "did", case-sensitive, and a message listener for the "SIGNATURE_READY" event.
 
-The "did" element represents the Decentralized Identification obtain from the .well-know/did.json document and saved in chrome.storage, and the "proof" element represents the signature of the signed message with the private key.
+The "did" element represents the Decentralized Identification obtain from the .well-know/did.json document and saved in chrome.storage, the signature is sent back to the public facing page via the message event of "SIGNATURE_READY".
 
 ```html
 <input type="text" id="did">
-<textarea id="proof" rows="5"></textarea>
+```
+
+create a message listener,
+
+```html
+window.addEventListener("message", async function (e) {
+    if (!e.data || typeof e.data !== "object") return;
+
+    console.log(e);
+
+    if (e.data.type === "SIGNATURE_READY") {
+        const { signature } = e.data;
+        console.log(signature);
+        // process the signature
+        document.getElementById("proof").value = signature.signature;
+    }
+});
 ```
 
 # ⚠️ Development Key Disclaimer

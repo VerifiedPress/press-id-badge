@@ -41,22 +41,19 @@ window.onload = async function() {
 
 document.getElementById("save").addEventListener("click", async () => {
     const didVal = document.getElementById("did")?.value || "";
-    const keyVal = document.getElementById("privateKey")?.value || "";
 
     chrome.storage.local.set({
-        didValue: didVal,
-        keyValue: keyVal
+        didValue: didVal
     });
 
     chrome.runtime.sendMessage(
         {
             command: "SAVE_USER_PARAMS",
-            did: didVal,
-            privateKey: keyVal
+            did: didVal
         },
         (res) => {
             if (chrome.runtime.lastError) {
-                console.log(chrome.runtime.lastError);
+              //console.log(chrome.runtime.lastError);
             }
             
             // Broadcast DID update to active tab
@@ -71,7 +68,7 @@ document.getElementById("save").addEventListener("click", async () => {
                 didVal
               }, (response) => {
                 if (chrome.runtime.lastError) {
-                  console.error("Content script message error:", chrome.runtime.lastError.message);
+                  //console.error("Content script message error:", chrome.runtime.lastError.message);
                 } else {
                   console.log("Content script acknowledged DID update:", response);
                 }
@@ -87,9 +84,13 @@ document.getElementById("save").addEventListener("click", async () => {
 
 document.getElementById("signButton").addEventListener("click", async () => {
     const key = document.getElementById("privateKeyPEM").value;
+    if (key.length === 0) {
+      alert("Missing private key?");
+      return false;
+    }
     const message = document.getElementById("messageText").value;
-    const response = await chrome.runtime.sendMessage({ command: "SIGN_MESSAGE", key: key, message: message });
-    console.log(response);
+    await chrome.runtime.sendMessage({ command: "SIGN_MESSAGE", key: key, message: message });
+
     chrome.storage.local.set({ dialog: "settings" });
     // ✅ Close the popup
     window.close();

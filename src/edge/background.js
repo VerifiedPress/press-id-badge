@@ -126,11 +126,11 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
   switch(command) {
     case "SAVE_USER_PARAMS": 
       {
-        const { did, privateKey } = msg;
+        const { did } = msg;
         
         // Save credentials to sync storage
         chrome.storage.sync.set({
-          pressid_credentials: { did, privateKey }
+          pressid_credentials: { did }
         }).then(() => {
           sendResponse({ saved: true });
         }).catch((err) => {
@@ -175,7 +175,7 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
               signature
             }, function (response) {
               if (chrome.runtime.lastError) {
-                console.error("Failed to send message to content script:", chrome.runtime.lastError.message);
+                //console.error("Failed to send message to content script:", chrome.runtime.lastError.message);
               }
             });
           });        
