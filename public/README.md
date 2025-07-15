@@ -149,7 +149,17 @@ index.php ←→ content.js ←→ background.js ←→ popup.js
        postMessage      sendMessage        sendMessage
 ```
 
-### ⚠️ Development Key Disclaimer
+# Developing with Press ID Badge Extension
+The **Press ID Badge** extension provides the mechanics to sign a message with a private key and then set a DOM object id with that signature. The minimum configuration for a public facing page with **Press ID Badge** extension are two input or hidden fields (*with value attribute*) with the assigned id's of "did" and "proof", case-sensitive.
+
+The "did" element represents the Decentralized Identification obtain from the .well-know/did.json document and saved in chrome.storage, and the "proof" element represents the signature of the signed message with the private key.
+
+```html
+<input type="text" id="did">
+<textarea id="proof" rows="5"></textarea>
+```
+
+# ⚠️ Development Key Disclaimer
 
 > **IMPORTANT**  
 > The public and private keys provided in this repository are strictly for **evaluation and development purposes only**.  
