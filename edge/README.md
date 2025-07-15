@@ -1,7 +1,9 @@
 # Edge Browser Extension
- The Edge Extension for accesing verifiedpress.org. See [chrome](../chrome/README.md) about Chrome Extensions.
+The Edge Extension for accesing verifiedpress.org. See [chrome](../chrome/README.md) about Chrome Extensions.
 
- ## Quickstart
+[Microsoft Edge Extension Developer](https://learn.microsoft.com/en-us/microsoft-edge/extensions/landing/)
+
+## Quickstart
  After installing the extension, visit [verifiedpress.org](https://verifiedpress.org), and the following popup will appear,
  
  ![initial popup](../chrome/images/screenshot-1.png)
