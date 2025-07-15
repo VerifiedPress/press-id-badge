@@ -1,0 +1,20 @@
+{
+  "name": "key2jwt",
+  "version": "1.0.0",
+  "description": "Convert a Public Key into a JSON Web Token",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": {
+    "name": "PRESSPAGE ENTERTAINMENT INC",
+    "email": "presspage.entertainment@gmail.com",
+    "url": "https://verifiedpress.org"
+  },
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "dependencies": {
+    "jose": "^6.0.11"
+  }
+}
