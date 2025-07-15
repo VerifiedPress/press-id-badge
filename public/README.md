@@ -23,7 +23,7 @@ This sandbox is ideal for testing across multiple origins, simulating credential
 
 7. Using the sample decentralized identity (DiD) in [did.json](.well-known/did.json), which is **did:web:localhost:8082** to enter for the DID in the popup.
 
-8. Upon saving the DiD is populated in the index.php page,
+8. Upon saving the DiD is populated in the index.php page (*if the DID field doesn't populate, just reload the browser*),
 
 ![DiD populating](../images/screenshot-2.png)
 
