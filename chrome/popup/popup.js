@@ -28,6 +28,11 @@ document.getElementById("save").addEventListener("click", async () => {
     const didVal = document.getElementById("did")?.value || "";
     const keyVal = document.getElementById("privateKey")?.value || "";
 
+    chrome.storage.local.set({
+        didValue: didVal,
+        keyValue: keyVal
+    });
+
     chrome.runtime.sendMessage(
         {
             command: "SAVE_USER_PARAMS",
@@ -36,12 +41,32 @@ document.getElementById("save").addEventListener("click", async () => {
         },
         (res) => {
             if (chrome.runtime.lastError) {
-                console.error(chrome.runtime.lastError);
+                console.log(chrome.runtime.lastError);
             }
+            
+            // Broadcast DID update to active tab
+            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+              if (!tabs.length) {
+                console.warn("No active tab available for UPDATE_PUBLIC_DID.");
+                return;
+              }
+
+              chrome.tabs.sendMessage(tabs[0].id, {
+                type: "UPDATE_PUBLIC_DID",
+                didVal
+              }, (response) => {
+                if (chrome.runtime.lastError) {
+                  console.error("Content script message error:", chrome.runtime.lastError.message);
+                } else {
+                  console.log("Content script acknowledged DID update:", response);
+                }
+              });
+            
+              window.close(); // ✅ Close after confirmed message resolution
+              return true; // ⬅️ Critical: keeps message channel open
+            });
         }
     );
-    window.close(); // ✅ Close after confirmed message resolution
-    return true; // ⬅️ Critical: keeps message channel open
 })
 
 
@@ -52,12 +77,4 @@ document.getElementById("signButton").addEventListener("click", async () => {
     chrome.storage.local.set({ dialog: "settings" });
     // ✅ Close the popup
     window.close();
-});
-
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg.type === "POPULATE_MESSAGE") {
-    console.log("Received via runtime:", msg);
-    // Populate the popup UI
-    document.getElementById("messageText").value = msg.data || "";
-  }
 });

@@ -15,12 +15,20 @@ window.addEventListener("message", async function (event) {
 
   if (event.data.command === "GET_USER_PARAMS") {
         chrome.storage.sync.get("pressid_credentials").then(function(res, err){
-          document.getElementById("did").value = res.pressid_credentials.did;
-          chrome.storage.local.set({
-            dialog: "settings",
-            didValue: res.pressid_credentials.did,
-            keyValue: res.pressid_credentials.privateKey
-          });
+          if (res.pressid_credentials) {
+            document.getElementById("did").value = res.pressid_credentials.did;
+            chrome.storage.local.set({
+              dialog: "settings",
+              didValue: res.pressid_credentials.did,
+              keyValue: res.pressid_credentials.privateKey
+            });
+          } else {
+            chrome.storage.local.set({
+              dialog: "settings",
+              didValue: "",
+              keyValue: ""
+            });
+          }
           chrome.runtime.sendMessage({ command: "SHOW_POPUP_DIALOG" });
         });
         return true; // ⬅️ Critical: keeps message channel open
@@ -38,6 +46,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       signature: message.signature
     }, "*");
 
+    sendResponse({ received: true });
+  } else if (message.type = "UPDATE_PUBLIC_DID") {
+    document.getElementById("did").value = message.didVal;
     sendResponse({ received: true });
   }
 });

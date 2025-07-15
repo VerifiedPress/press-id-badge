@@ -88,15 +88,21 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
   const command = msg.command || msg.action || msg.type || "";
 
   switch(command) {
-    case "SAVE_USER_PARAMS":
+    case "SAVE_USER_PARAMS": 
       {
+        const { did, privateKey } = msg;
+        
+        // Save credentials to sync storage
         chrome.storage.sync.set({
-            pressid_credentials: {
-                did: msg.did,
-                privateKey: msg.privateKey
-            }
-        }).then(sendResponse);
-        return true; // ⬅️ Critical: keeps message channel open
+          pressid_credentials: { did, privateKey }
+        }).then(() => {
+          sendResponse({ saved: true });
+        }).catch((err) => {
+          console.error("Storage save failed:", err);
+          sendResponse({ saved: false, error: err.message });
+        });
+
+        return true; // 🛡️ Keeps message channel open
       }
     case "GET_USER_PARAMS":
       {
@@ -139,10 +145,6 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
           sendResponse({ error: `missing key=${key} and/or message=${message}` });
         }
         return true; // ✅ This keeps the port alive
-      }
-    case "sendToPopup":
-      {
-        chrome.runtime.sendMessage({action: "updateDidValue", value: request.value});
       }
   }
 });
