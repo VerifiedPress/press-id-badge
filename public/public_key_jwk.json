@@ -3,5 +3,6 @@
   "e": "EAA",
   "n": "ANO9JEYj914K5hIX5_GwvZ1Fr68yMrSfZsHHtYTeARnEu_C2S6CO6SOH4QY18mBbYrcjVL1zqdTCd2Jzup89LkZugdM80an9Q9j-q5FTcGuiIfQ0fSKRkB496GdRz72ZvVAMpNpHe3-15dneMHUuzuUGB8k4cjm1dm37S6eSXpHk43MUjAa-6zcZNv9G6Sb9uKNq4fr0Uyn1Y3NAxClkN4ryYanrm8zFMUDik-g6HqKMyL4JEDewgbIkLois00Xi_j89HETVHCrMbWAi32XnZgWD8PoewKSRwgKDde7w3wZl8TWP7QFJLi5d9TVY0rPFIXoPiMspOGjdtRub4zwDuns",
   "alg": "RS256",
-  "use": "sig"
+  "use": "sig",
+  "kid": "did:web:localhost:8082"
 }

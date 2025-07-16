@@ -81,6 +81,56 @@ public/.well-known/did.json
 Your DID is now verifiable using the published RSA key.
 
 ---
+## The DID (Decentralized Identifier) as the kid (Key ID) in a JWK
+
+Using a DID (Decentralized Identifier) as the kid (Key ID) in a JWK is a clever way to tightly couple the key with its identity context—especially in decentralized systems. Here's how it works and what to consider:
+
+### 🧩 Why Use a DID as kid?
+- Globally Unique: DIDs are designed to be unique across systems, making them ideal identifiers.
+- Self-describing: A DID can point to a DID Document that contains verification methods, including the JWK itself.
+- Interoperability: Many decentralized identity frameworks (like DID-JWK or DID-Key) support embedding JWKs directly in DID Documents.
+
+---
+
+### ✅ When to Use a Custom DID (e.g. `did:web`, `did:key`, `did:ion`, etc.)
+
+If the user already has a DID (say, `did:web:example.com` or `did:ion:xyz...`) and wants to use a JWK for signing content, you can:
+
+- Embed the JWK in the DID Document under `verificationMethod`
+- Reference it using a fragment like `did:web:example.com#key-1`
+- Set the `kid` in the JWK to match that fragment (`kid: "did:web:example.com#key-1"`)
+
+This approach allows the JWK to be **anchored to the user's existing DID**, maintaining continuity across identity systems.
+
+---
+
+### 🔄 How It Differs from `did:jwk`
+
+- `did:jwk` is a **self-contained DID** derived directly from the JWK itself.
+- It’s deterministic and doesn’t require external resolution infrastructure.
+- But it **doesn’t support key rotation** or multiple keys—it’s a one-key, one-DID setup.
+
+Using a custom DID gives you **more flexibility**, especially if you're managing multiple keys, rotating them, or integrating with federated trust systems like VerifiedPress.
+
+---
+
+### 🧪 Example
+
+```json
+{
+  "kty": "RSA",
+  "alg": "RS256",
+  "use": "sig",
+  "kid": "did:web:verifiedpress.org#signing-key-2025",
+  "n": "...",
+  "e": "AQAB"
+}
+```
+
+This JWK is tied to a key in the DID Document at `did:web:verifiedpress.org`, and the verifier can resolve that DID to fetch the public key.
+
+---
+
 
 ## ⚠️ Security Notice
 

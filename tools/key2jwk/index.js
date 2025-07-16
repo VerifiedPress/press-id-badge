@@ -51,20 +51,26 @@ function hexToBuffer(hex) {
 }
 
 // Paste your extracted hex values here
+let did = "";
 const {modulusHex, exponentHex} = getModulusHex("../../public/public_key.pem"); // ← from OpenSSL
+(async()=>{
+  const json = await fetch("http://localhost:8082/.well-known/did.json").then(res=>res.json());
+  did = json.id;
 
-const n = base64url(hexToBuffer(modulusHex));
-const e = base64url(hexToBuffer(exponentHex));
+  const n = base64url(hexToBuffer(modulusHex));
+  const e = base64url(hexToBuffer(exponentHex));
 
-const jwk = {
-  kty: "RSA",
-  e,
-  n,
-  alg: "RS256",
-  use: "sig"
-};
+  const jwk = {
+    kty: "RSA",
+    e,
+    n,
+    alg: "RS256",
+    use: "sig",
+    kid: did
+  };
 
-writeFileSync("../../public/public_key_jwk.json", JSON.stringify(jwk, null, 2));
+  writeFileSync("../../public/public_key_jwk.json", JSON.stringify(jwk, null, 2));
 
+  console.log('JSON Web Key is written to ../../public/public_key_jwk.json');  
+})();
 
-console.log('JSON Web Key is written to ../../public/public_key_jwk.json');
