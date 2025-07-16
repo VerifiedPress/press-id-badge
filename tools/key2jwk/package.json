@@ -4,7 +4,7 @@
   "description": "Convert a Public Key into a JSON Web Token",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node index.js ../../public/public_key.pem https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/.well-known/did.json"
   },
   "keywords": [],
   "author": {

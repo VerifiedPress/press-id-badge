@@ -1,75 +1,119 @@
-const { writeFileSync } = require("fs");
-const { spawnSync } = require('child_process');
+#!/usr/bin/env node
 
-function getModulusHex(public_key_filename) {
-    const result = spawnSync('openssl', [
-    'rsa',
-    '-in',
-    `${public_key_filename}`,
-    '-pubin',
-    '-text',
-    '-noout'
-    ]);
+const { writeFileSync, readFileSync } = require("fs");
+const { spawnSync } = require("child_process");
+const path = require("path");
 
-    if (result.error) {
-        console.error("Error running OpenSSL:", result.error);
-        process.exit(1);
-    }
+const fs = require("fs");
 
-    const output = result.stdout.toString();
+function extractModulusExponent(pemPath) {
+  const result = spawnSync("openssl", [
+    "rsa", "-in", pemPath, "-pubin", "-text", "-noout"
+  ]);
 
-    // 🧬 Extract the entire Modulus block (multi-line up to Exponent:)
-    const modulusBlockMatch = output.match(/Modulus:\s*((?:\s+[0-9A-Fa-f:]+\n?)+)/);
-    const exponentMatch = output.match(/Exponent:\s+(\d+)\s+\(0x([0-9a-f]+)\)/i);
+  if (result.error || result.status !== 0) {
+    throw new Error("OpenSSL error: " + result.stderr.toString());
+  }
 
-    if (!modulusBlockMatch || !exponentMatch) {
-        console.error("Failed to extract key parameters.");
-        process.exit(1);
-    }
+  const output = result.stdout.toString();
+  const modulusMatch = output.match(/Modulus:\s*((?:\s+[0-9A-Fa-f:]+\n?)+)/);
+  const exponentMatch = output.match(/Exponent:\s+\d+\s+\(0x([0-9a-f]+)\)/i);
 
-    // 🧹 Clean and flatten modulus block
-    const modulusHex = modulusBlockMatch[1].replace(/[\s:\n]/g, "");
-    const exponentHex = exponentMatch[2];
+  const modulusHex = modulusMatch[1].replace(/[\s:\n]/g, "");
+  const exponentHex = exponentMatch[1].padStart(6, "0");
 
-    if (!modulusHex || !exponentHex) {
-        console.error("Failed to extract key parameters.");
-        process.exit(1);
-    }
-
-
-    // Clean and flatten hex string
-    return {modulusHex, exponentHex};
+  return {
+    n: base64url(Buffer.from(modulusHex, "hex")),
+    e: base64url(Buffer.from(exponentHex, "hex"))
+  };
 }
 
 function base64url(buffer) {
-  return buffer.toString("base64")
-    .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  return buffer.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function getModulusHex(pemPath) {
+  const result = spawnSync("openssl", [
+    "rsa",
+    "-in", pemPath,
+    "-pubin",
+    "-text",
+    "-noout"
+  ]);
+
+  if (result.error || result.status !== 0) {
+    throw new Error("OpenSSL error: " + (result.error?.message || result.stderr.toString()));
+  }
+
+  const output = result.stdout.toString();
+  const modulusMatch = output.match(/Modulus:\s*((?:\s+[0-9A-Fa-f:]+\n?)+)/);
+  const exponentMatch = output.match(/Exponent:\s+(\d+)\s+\(0x([0-9a-f]+)\)/i);
+
+  if (!modulusMatch || !exponentMatch) {
+    throw new Error("Failed to extract modulus or exponent");
+  }
+
+  const modulusHex = modulusMatch[1].replace(/[\s:\n]/g, "");
+  const exponentHex = exponentMatch[2].padStart(6, "0"); // ensure 3-byte exponent
+  return { modulusHex, exponentHex };
 }
 
 function hexToBuffer(hex) {
   return Buffer.from(hex.replace(/\s+/g, ""), "hex");
 }
 
-// Paste your extracted hex values here
-let did = "";
-const {modulusHex, exponentHex} = getModulusHex("../../public/public_key.pem"); // ← from OpenSSL
-(async()=>{
-  const json = await fetch("http://localhost:8082/.well-known/did.json").then(res=>res.json());
-  did = json.id;
+function safeHexToBuffer(hex) {
+  if (typeof hex !== "string") {
+    throw new Error("Hex input must be a string");
+  }
+
+  const cleaned = hex.replace(/\s+/g, "");
+  if (!/^[0-9a-fA-F]+$/.test(cleaned)) {
+    console.error("Invalid hex input:", hex); // 🔍 log original input
+    throw new Error("Invalid hex input");
+  }
+
+  return Buffer.from(cleaned, "hex");
+}
+
+async function fetchDid(didUrl) {
+  try {
+    const res = await fetch(didUrl);
+    const json = await res.json();
+    return json.id || "";
+  } catch (err) {
+    console.warn("Could not fetch DID from", didUrl, err);
+    return "";
+  }
+}
+
+(async () => {
+  const args = process.argv.slice(2);
+  if (args.length < 1) {
+    console.error("Usage: node modulus2jwk.js <pemPath> [didUrl] [outputPath]");
+    process.exit(1);
+  }
+
+  const [pemPath, didUrl, outputPath] = args;
+  const resolvedPem = path.resolve(pemPath);
+  const { modulusHex, exponentHex } = getModulusHex(resolvedPem);
 
   const n = base64url(hexToBuffer(modulusHex));
   const e = base64url(hexToBuffer(exponentHex));
+  const did = didUrl ? await fetchDid(didUrl) : "";
+
+  console.log(did)
 
   const jwk = {
     kty: "RSA",
-    e,
     n,
+    e,
     alg: "RS256",
     use: "sig",
     kid: did
   };
 
-  writeFileSync("../../public/public_key_jwk.json", JSON.stringify(jwk, null, 2));
-
-  console.log('JSON Web Key is written to ../../public/public_key_jwk.json');  
+  const dest = outputPath || path.resolve(path.dirname(pemPath), "public_key_jwk.json");
+  writeFileSync(dest, JSON.stringify(jwk, null, 2));
+  console.log(`✅ JWK written to ${dest}`);
 })();
