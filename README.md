@@ -1,5 +1,5 @@
 # Press ID Badge Browser Extension
-The overview for a browser extension
+The overview for a browser extension. Read the [whitepaper](./whitepaper.pdf).
 
 ![sett1ngs](./images/screenshot-1.png) and ![signing](./images/screenshot-4.png)
 
