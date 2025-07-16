@@ -73,4 +73,3 @@ const {modulusHex, exponentHex} = getModulusHex("../../public/public_key.pem"); 
 
   console.log('JSON Web Key is written to ../../public/public_key_jwk.json');  
 })();
-
