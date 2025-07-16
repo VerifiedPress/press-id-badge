@@ -32,12 +32,14 @@
 
                 <p>
                     <label for="proof" class="w3-text-blue"><b>Signature Proof</b></label>
-                    <textarea class="w3-input w3-border w3-light-grey" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly required></textarea>
+                    <textarea class="w3-input w3-border w3-light-grey" rows="5" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly required></textarea>
                 </p>
 
                 <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
                 <br/>
-                <input type="submit" class="w3-button w3-block w3-black" value="Submit" />
+                <input type="submit" name="authenticate_privatekey" class="w3-button w3-block w3-green" value="Validate using Private Key" />
+                <br/>
+                <input type="submit" name="authenticate_jwt" class="w3-button w3-block w3-purple" title="This is the preferred method for verifying credentials!" value="Validate using JSON Web Key (JWK)" />
             </form>
         </fieldset>
     </div>
