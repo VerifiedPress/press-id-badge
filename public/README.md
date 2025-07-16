@@ -49,6 +49,16 @@ This sandbox is ideal for testing across multiple origins, simulating credential
 
 now can you can process the **DiD** and **Signature** for your login logic?
 
+14. Adding an authenticate.php file to process with a submit button on the index.php,
+
+![Submit to Authenticate](../images/screenshot-7_1.png)
+
+15. The remote copy of the public_key.pem is used to verify the signature against the message,
+
+![Successful Verification](../images/screenshot-8.png)
+
+**NOTE**: in the *.well-known/did.json*, the JWK and Public Key has been replaced with a public link for the public_key.pem certificate, as the openssl_verify will fail when the public_key is passed as a string or decoded from a JWK, but works when file_get_contents(<URL>) is being used.
+
 ## Overview
 ![overview](../images/updated-blockdiagram-with-flow.png)
 

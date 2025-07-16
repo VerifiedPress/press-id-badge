@@ -19,22 +19,26 @@
         </div>
 
         <fieldset>
-            <p>
-                <label for="did" class="w3-text-blue"><b>Your DID</b></label>
-                <input class="w3-input w3-border w3-light-grey" id="did" name="did" type="text" placeholder="did:web:yourdomain.com" readonly required>
-            </p>
+            <form method="post" action="authenticate.php">
+                <p>
+                    <label for="did" class="w3-text-blue"><b>Your DID</b></label>
+                    <input class="w3-input w3-border w3-light-grey" id="did" name="did" type="text" placeholder="did:web:yourdomain.com" readonly required>
+                </p>
 
-            <p>
-                <label for="message" class="w3-text-blue"><b>Message</b></label>
-                <input class="w3-input w3-border" id="message" name="message" type="text" value="" placeholder="Enter a message to be signed." required>
-            </p>
+                <p>
+                    <label for="message" class="w3-text-blue"><b>Message</b></label>
+                    <input class="w3-input w3-border" id="message" name="message" type="text" value="" placeholder="Enter a message to be signed." required>
+                </p>
 
-            <p>
-                <label for="proof" class="w3-text-blue"><b>Signature Proof</b></label>
-                <textarea class="w3-input w3-border w3-light-grey" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly required></textarea>
-            </p>
+                <p>
+                    <label for="proof" class="w3-text-blue"><b>Signature Proof</b></label>
+                    <textarea class="w3-input w3-border w3-light-grey" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly required></textarea>
+                </p>
 
-            <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
+                <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
+                <br/>
+                <input type="submit" class="w3-button w3-block w3-black" value="Submit" />
+            </form>
         </fieldset>
     </div>
   </div>
