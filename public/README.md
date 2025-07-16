@@ -57,7 +57,19 @@ now can you can process the **DiD** and **Signature** for your login logic?
 
 ![Successful Verification](../images/screenshot-8.png)
 
-**NOTE**: in the *.well-known/did.json*, the JWK and Public Key has been replaced with a public link for the public_key.pem certificate, as the openssl_verify will fail when the public_key is passed as a string or decoded from a JWK, but works when file_get_contents(<URL>) is being used.
+with an updated verification confirmation,
+
+![Updated Public Key Verification Confirmation](../images/screenshot-10.png)
+
+16. Using a custom **JwkVerifier** class, that can verify a JWK without using openssl_* functions to verify a JWK against a signature and message,
+
+![Verification using Public Key and JWK](../images/screenshot-9.png)
+
+17. The verification confirmation for JWK,
+
+![Verification using JWK](../images/screenshot-11.png)
+
+**NOTE**: in the *.well-known/did.json*, the ~JWK and~ Public Key has been replaced with a public link for the public_key.pem certificate, as the openssl_verify will fail when the public_key is passed as a string or decoded from a JWK, but works when file_get_contents(<URL>) is being used. The JWK has been added back under the index of "jwk" and the public key referenced using the index of "key."
 
 ## Overview
 ![overview](../images/updated-blockdiagram-with-flow.png)
