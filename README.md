@@ -5,6 +5,8 @@ The overview for a browser extension. Read the [whitepaper](./whitepaper.pdf).
 
 Your Decentralized Identification (DiD) credentials are created using the verifiedpress.org command-line interface utility.
 
+![entertainment](images/entertainment.png)
+
 **Browser Extension Compatibility Overview**
 
 | Browser     | Extension Architecture       | Chrome Extension Compatibility | Notes |
