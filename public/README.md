@@ -10,7 +10,6 @@ Decentralized identities used with this extension can be created using:
 - VerifiedPress CLI — install via ```npm i -g @verifiedpress/verifiedpress-cli``` to issue, inspect, and validate credentials aligned with VerifiedPress.org (or used on your own verification platform).
 This sandbox is ideal for testing across multiple origins, simulating credential issuance and selective disclosure, and validating login logic without coupling to centralized identity providers.
 
-
 ## Quickstart
 1. Install the [PHP CLI](https://php.net), make sure php executable is int your path.
 2. Clone this repository and change to the public/ directory
@@ -86,6 +85,15 @@ with an updated verification confirmation,
 21. Verifying using openssl also yields an invalid signature
 
 ![Invalid signature detection by openssl](../images/screenshot-15.png)
+
+### Implementing DID Credential Signing
+The user must register with your service by providing their public DID and identity public URL which contains their public JWK for verification.
+
+You must provide a message that you want to user to sign with their local private key and provide the signature of the message to your service so you can verify if they really sign using the public identity URL of the JWK, if they infact did sign with he corresponding private key, then they will pass verification. If they sign with a different private key, to simulate an imposter, then the verification will fail as shown above.
+
+Effectively eliminating the userid-password-2fa model in the traditional sense, the userid is the public DID and the password is the signature of a message or metadata string provided by the service for the user to sign using their local private key.
+
+Verification is perform on publicly accessible identity documents that were provided during a registration process.
 
 
 ## Overview
