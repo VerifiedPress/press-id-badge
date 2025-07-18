@@ -20,16 +20,19 @@ $_SESSION['did'] = $did;
 
 try {
     $jwk = json_decode(file_get_contents($user['jwk']), true)['verificationMethod'][0]['jwk'];
-    $isValid = verifySignatureByJWK($jwk, $message, $proof);
+    $result = verifySignatureByJWK($jwk, $message, $proof);
 
-    if ($isValid) {
+    if ($result['valid']) {
         unset($_SESSION['error']);
         $_SESSION['method'] = 'Verification by JSON Web Key (JWK)';
         $_SESSION['name'] = $user['name'];
         require("error/error-success.php");
+    } else {
+        $_SESSION['error'] = $result['error'];
+        require("error/error-invalid-signature.php");
     }
 } catch(Exception $ex) {
-    $_SESSION['error'] = $ex->getMessage();
+    $_SESSION['error'] = $ex;
     require("error/error-invalid-signature.php");
 }
 ?>

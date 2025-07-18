@@ -46,10 +46,13 @@ function verifySignature(string $publicKeyPem, string $message, string $signatur
 /**
  * Verify the signature and message using a custom JWK verifier class, without using openssl_* functions
  */
-function verifySignatureByJWK(array $jwk, string $message, string $signatureHex) : bool {
+function verifySignatureByJWK(array $jwk, string $message, string $signatureHex) : array {
     $verifier = new JwkVerifier($jwk, $message, $signatureHex);
     $isValid = $verifier->verify();
 
-    return $isValid;
+    return [
+        'valid' => $isValid,
+        'error' => $verifier->getLastError()
+    ];
 }
 ?>
