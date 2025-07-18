@@ -11,6 +11,8 @@ class JwkVerifier
     protected string $message;
     protected string $signatureHex;
     protected array $jwk;
+    protected ?string $lastError = null;
+
 
     public function __construct(array $jwk, string $message, string $signatureHex) {
         $this->jwk = $jwk;
@@ -18,6 +20,47 @@ class JwkVerifier
         $this->signatureHex = $signatureHex;
     }
 
+public function verify(): bool {
+        try {
+            // Decode inputs
+            $modulus = self::base64url_decode($this->jwk['n']);
+            $exponent = self::base64url_decode($this->jwk['e']);
+            $signature = hex2bin($this->signatureHex);
+            if ($signature === false) throw new Exception("Invalid hex signature");
+
+            // Convert to big integers
+            $n = self::binToBigInt($modulus);
+            $e = self::binToBigInt($exponent);
+            $s = self::binToBigInt($signature);
+
+            // Perform RSA decryption: m = s^e mod n
+            $m = bcpowmod($s, $e, $n);
+            if ($m === null) throw new Exception("RSA decryption failed");
+
+            // Convert message to SHA-256 hash
+            $expectedHash = hash('sha256', $this->message, true);
+
+            // Extract hash from decrypted message
+            $decryptedBin = self::bigIntToBin($m, strlen($modulus));
+            $hashFromSig = substr($decryptedBin, -32);
+
+            if (!hash_equals($expectedHash, $hashFromSig)) {
+                $this->lastError = "Hash mismatch: message may not be signed by JWK";
+                return false;
+            }
+
+            return true;
+        } catch (Exception $e) {
+            $this->lastError = $e->getMessage();
+            return false;
+        }
+    }
+
+    public function getLastError(): ?string {
+        return $this->lastError;
+    }
+
+    /*
     public function verify(): bool {
         // Decode inputs
         $modulus = self::base64url_decode($this->jwk['n']);
@@ -43,6 +86,7 @@ class JwkVerifier
 
         return hash_equals($expectedHash, $hashFromSig);
     }
+    */
 
     protected static function base64url_decode(string $data): string {
         $pad = strlen($data) % 4;
