@@ -12,6 +12,13 @@ function getPublicKeyByDID($did) {
             'role' => 'author',
             'key' => 'https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/public_key.pem',
             'jwk' => 'https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/.well-known/did.json'
+        ],
+        'did:press:presspage.news:publisher' => [
+            'name' => 'PRESSPAGE ENTERTAINMENT INC',
+            'email' => 'presspage.entertainment@gmail.com',
+            'role' => 'publisher',
+            'key' => 'https://presspage.news/keys/public.pem',
+            'jwk' => 'https://presspage.news/.well-known/did.json'
         ]
     ];
     return $registry[$did] ?? null;
