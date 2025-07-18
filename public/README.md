@@ -71,6 +71,23 @@ with an updated verification confirmation,
 
 **NOTE**: in the *.well-known/did.json*, the ~JWK and~ Public Key has been replaced with a public link for the public_key.pem certificate, as the openssl_verify will fail when the public_key is passed as a string or decoded from a JWK, but works when file_get_contents(<URL>) is being used. The JWK has been added back under the index of "jwk" and the public key referenced using the index of "key."
 
+18. If signing a message with a different identity private key wil fail during the verification because the identity that is being verified against is located on [github.com](https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/.well-known/did.json). This process simulates an attempt to access using a public DID but with a different private key. The server varification uses the registered did.json which contains the JWK public key for verification.
+
+![Signing with a different private key](../images/screenshot-12.png)
+
+19. You see the signature is different from previous valid signatures.
+
+![Different signatures](../images/screenshot-13.png)
+
+20. The verification fails because the server is using the [github.com](https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/.well-known/did.json) public key to verify.
+
+![Invalid signature](../images/screenshot-14.png)
+
+21. Verifying using openssl also yields an invalid signature
+
+![Invalid signature detection by openssl](../images/screenshot-15.png)
+
+
 ## Overview
 ![overview](../images/updated-blockdiagram-with-flow.png)
 
