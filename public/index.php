@@ -37,10 +37,32 @@
 
                 <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
                 <br/>
-                <input type="submit" name="authenticate_privatekey" class="w3-button w3-block w3-green" value="Validate using Private Key" />
+                <input type="submit" name="authenticate_publickey" class="w3-button w3-block w3-green" value="Validate using Public Key" />
                 <br/>
                 <input type="submit" name="authenticate_jwt" class="w3-button w3-block w3-purple" title="This is the preferred method for verifying credentials!" value="Validate using JSON Web Key (JWK)" />
             </form>
+            <fieldset>
+                <div class="w3-container">
+                <div class="w3-panel w3-leftbar w3-light-grey">
+                    <p class="w3-xlarge">
+                    A boomer wakes up to a ransacked home.<br>
+                    TV's still there. Jewelry untouched. Laptop humming quietly.<br>
+                    But their sacred password notebook? Gone.<br><br>
+
+                    Left in its place? A sticky note in ballpoint ink:<br>
+                    <strong>"Install the Press ID Badge extension, Brenda."</strong><br><br>
+
+                    No stolen goods—just stolen assumptions about personal cybersecurity.<br>
+                    The burglar didn’t take valuables. They took initiative.<br><br>
+
+                    Boomer defense system:<br>
+                    1. Passwords in plain sight.<br>
+                    2. Webcam covered with a Post-it.<br>
+                    3. Extensions… still a mystery.
+                    </p>
+                </div>
+                </div>                
+            </fieldset>
         </fieldset>
     </div>
   </div>
