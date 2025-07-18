@@ -8,8 +8,8 @@
         "id": "did:web:localhost:8082#key-1",
         "type": "JsonWebKey2020",
         "controller": "did:web:localhost:8082",
-        "publicKeyPem": "https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/public_key.pem",
-        "publicKeyJwk": {
+        "key": "https://github.com/VerifiedPress/press-id-badge/raw/refs/heads/main/public/public_key.pem",
+        "jwk": {
             "kty": "RSA",
             "e": "AQAB",
             "n": "ANO9JEYj914K5hIX5_GwvZ1Fr68yMrSfZsHHtYTeARnEu_C2S6CO6SOH4QY18mBbYrcjVL1zqdTCd2Jzup89LkZugdM80an9Q9j-q5FTcGuiIfQ0fSKRkB496GdRz72ZvVAMpNpHe3-15dneMHUuzuUGB8k4cjm1dm37S6eSXpHk43MUjAa-6zcZNv9G6Sb9uKNq4fr0Uyn1Y3NAxClkN4ryYanrm8zFMUDik-g6HqKMyL4JEDewgbIkLois00Xi_j89HETVHCrMbWAi32XnZgWD8PoewKSRwgKDde7w3wZl8TWP7QFJLi5d9TVY0rPFIXoPiMspOGjdtRub4zwDuns",

@@ -7,7 +7,7 @@ The public/ directory in this repository serves as a testbed for:
 - 🧬 Prototyping different login implementations using the extension as an SSO layer.
 Decentralized identities used with this extension can be created using:
 - [Veramo](https://veramo.io/), a pluggable framework for DID and VC management.
-- VerifiedPress CLI — install via ```npm i @verifiedpress/verifiedpress-cli``` to issue, inspect, and validate credentials aligned with VerifiedPress.org (or used on your own verification platform).
+- VerifiedPress CLI — install via ```npm i -g @verifiedpress/verifiedpress-cli``` to issue, inspect, and validate credentials aligned with VerifiedPress.org (or used on your own verification platform).
 This sandbox is ideal for testing across multiple origins, simulating credential issuance and selective disclosure, and validating login logic without coupling to centralized identity providers.
 
 

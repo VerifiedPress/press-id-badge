@@ -19,7 +19,7 @@ if (!$user) {
 $_SESSION['did'] = $did;
 
 try {
-    $jwk = json_decode(file_get_contents($user['jwk']), true)['verificationMethod'][0]['publicKeyJwk'];
+    $jwk = json_decode(file_get_contents($user['jwk']), true)['verificationMethod'][0]['jwk'];
     $isValid = verifySignatureByJWK($jwk, $message, $proof);
 
     if ($isValid) {
