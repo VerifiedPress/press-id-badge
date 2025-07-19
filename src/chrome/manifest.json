@@ -2,13 +2,10 @@
     "manifest_version": 3,
     "name": "Press ID Badge",
     "description": "Sign login requests with your DID key for accessing verifiedpress.org",
-    "version": "1.0",
+    "version": "1.0.1",
     "permissions": [
         "storage",
-        "scripting",
-        "activeTab",
-        "notifications",
-        "identity"
+        "activeTab"
     ],
     "host_permissions": [
         "<all_urls>"
