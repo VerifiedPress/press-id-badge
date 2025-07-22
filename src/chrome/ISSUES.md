@@ -33,3 +33,18 @@ or download the [latest release](https://github.com/VerifiedPress/press-id-badge
 4. test the fix
 5. check in your changes to your fork
 6. submit a pull request
+
+**FIX**
+Version: 1.0.2
+
+in the popup.js, the settings block is being set to block and none,
+
+```
+document.getElementById("settings").style.display = "block";
+document.getElementById("settings").style.display = "none";
+```
+but really should be
+```
+document.getElementById("settings").style.display = "block";
+document.getElementById("signing").style.display = "none";
+```

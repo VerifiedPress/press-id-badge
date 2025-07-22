@@ -15,7 +15,7 @@ window.onload = async function() {
       document.getElementById("signing").style.display = "block";
     } else {
       document.getElementById("settings").style.display = "block";
-      document.getElementById("settings").style.display = "none";
+      document.getElementById("signing").style.display = "none";
     }
   });
 
