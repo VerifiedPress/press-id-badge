@@ -24,6 +24,8 @@ The following issues pertains **ONLY** to the chrome extension.
 
 ![popup show](../../images/issues/chrome/v1.0.1/5-popup-showing.png)
 
+or download the [latest release](https://github.com/VerifiedPress/press-id-badge/releases), unarchive, switch to developer mode in the browser and install unpack version
+
 **How you can help**
 1. fork this repository
 2. review the source code and look for the cause
