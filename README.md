@@ -21,7 +21,7 @@ Your Decentralized Identification (DiD) credentials are created using the verifi
 
 
 ## 📰 Overview: Press ID Badge Browser Extension
-The **Press ID Badge** browser extension—designed to integrate seamlessly with credential verification platform of VerifiedPress.org.
+The **Press ID Badge** browser extension—designed to integrate seamlessly with credential verification platform of VerifiedPress.org or with any platform that wants to eliminate the UPA (or userid-password-authentication process) to a secured decentralized authorization that isn't subject to security hacking, [see for more info](public/).
 
 ### **Purpose**
 The **Press ID Badge** extension empowers journalists, editors, and contributors by securely displaying and verifying their decentralized identity (DID) and press credentials directly within public-facing web pages. This enables audience trust, attribution clarity, and interoperability with credential-aware publishing platforms.
