@@ -11,7 +11,7 @@ Your Decentralized Identification (DiD) credentials are created using the verifi
 
 | Browser     | Extension Architecture       | Chrome Extension Compatibility | Notes |
 |-------------|------------------------------|-------------------------------|-------|
-| [**Chrome**](src/chrome/README.md) [Download](https://www.google.com/chrome/bsem/download)   | WebExtension (Chromium-native) | ✅ Native                     | Full support for `manifest.json`, `chrome.*` APIs |
+| [**Chrome**](src/chrome/README.md) [Download](https://www.google.com/chrome/)   | WebExtension (Chromium-native) | ✅ Native                     | Full support for `manifest.json`, `chrome.*` APIs |
 | [**Edge**](src/edge/README.md) [Download](https://www.microsoft.com/en-us/edge/)     | Chromium-based Extension       | ✅ Native                     | Uses same engine as Chrome; extensions install directly |
 | [**Opera**](src/opera/README.md) [Download](https://www.opera.com/)    | Chromium-based Extension       | ✅ Native                     | Extensions from Chrome Web Store work seamlessly |
 | [**Brave**](src/brave/README.md) [Download](https://brave.com/download/)    | Chromium-based Extension       | ✅ Native                     | Extension APIs and behavior match Chrome closely |
