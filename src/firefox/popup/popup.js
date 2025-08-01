@@ -1,47 +1,59 @@
 window.onload = async function() {
-    chrome.storage.local.get(["dialog","didValue", "keyValue", "message"], (result) => {
-      if (result.didValue) {
-        document.getElementById("did").value = result.didValue;
-        document.getElementById("didText").value = result.didValue;
+  chrome.storage.local.get(["dialog","didValue", "message"], (result) => {
+    if (result.didValue) {
+      document.getElementById("did").value = result.didValue;
+      document.getElementById("didText").value = result.didValue;
+    }
+    if (result.message) {
+      document.getElementById("messageText").value = result.message;
+    }
+    if (result.dialog === "settings") {
+      document.getElementById("signing").style.display = "none";
+      document.getElementById("settings").style.display = "block";
+    } else if (result.dialog === "signing") {
+      document.getElementById("settings").style.display = "none";
+      document.getElementById("signing").style.display = "block";
+    } else {
+      document.getElementById("settings").style.display = "block";
+      document.getElementById("signing").style.display = "none";
+    }
+  });
+
+  const fileInput = document.getElementById("privateKeyFile");
+
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      const key = typeof reader.result === "string" ? reader.result : "";
+      try {
+        document.getElementById("privateKeyPEM").value = key;
+        return false;
+      } catch (err) {
+        console.error("❌ Failed to import private key:", err);
       }
-      if (result.keyValue) {
-        document.getElementById("privateKey").value = result.keyValue;
-        document.getElementById("privateKeyPEM").value = result.keyValue;
-      }
-      if (result.message) {
-        document.getElementById("messageText").value = result.message;
-      }
-      if (result.dialog === "settings") {
-        document.getElementById("signing").style.display = "none";
-        document.getElementById("settings").style.display = "block";
-      } else if (result.dialog === "signing") {
-        document.getElementById("settings").style.display = "none";
-        document.getElementById("signing").style.display = "block";
-      } else {
-        document.getElementById("settings").style.display = "block";
-        document.getElementById("settings").style.display = "none";
-      }
-    });
+    };
+    reader.readAsText(file);  // Make sure this is .readAsText()
+  });
 }
 
 document.getElementById("save").addEventListener("click", async () => {
     const didVal = document.getElementById("did")?.value || "";
-    const keyVal = document.getElementById("privateKey")?.value || "";
 
     chrome.storage.local.set({
-        didValue: didVal,
-        keyValue: keyVal
+        didValue: didVal
     });
 
     chrome.runtime.sendMessage(
         {
             command: "SAVE_USER_PARAMS",
-            did: didVal,
-            privateKey: keyVal
+            did: didVal
         },
         (res) => {
             if (chrome.runtime.lastError) {
-                console.log(chrome.runtime.lastError);
+              //console.log(chrome.runtime.lastError);
             }
             
             // Broadcast DID update to active tab
@@ -56,7 +68,7 @@ document.getElementById("save").addEventListener("click", async () => {
                 didVal
               }, (response) => {
                 if (chrome.runtime.lastError) {
-                  console.error("Content script message error:", chrome.runtime.lastError.message);
+                  //console.error("Content script message error:", chrome.runtime.lastError.message);
                 } else {
                   console.log("Content script acknowledged DID update:", response);
                 }
@@ -72,9 +84,16 @@ document.getElementById("save").addEventListener("click", async () => {
 
 document.getElementById("signButton").addEventListener("click", async () => {
     const key = document.getElementById("privateKeyPEM").value;
+    if (key.length === 0) {
+      alert("Missing private key?");
+      return false;
+    }
     const message = document.getElementById("messageText").value;
     await chrome.runtime.sendMessage({ command: "SIGN_MESSAGE", key: key, message: message });
+
     chrome.storage.local.set({ dialog: "settings" });
     // ✅ Close the popup
     window.close();
 });
+
+
