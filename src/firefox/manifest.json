@@ -12,8 +12,7 @@
   },
   "permissions": [
     "activeTab",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "background": {
     "scripts": ["background.js"]
@@ -21,7 +20,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "press-id-badge@verifiedpress.org",
-      "strict_min_version": "88.0"
+      "strict_min_version": "109.0"
     }
   },
   "action": {
