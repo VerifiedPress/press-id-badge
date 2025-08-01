@@ -1,4 +1,5 @@
 # Safari Browser Extension
+For MacOSX-**ONLY**
 
 [Creating an Extension](https://developer.apple.com/documentation/safariservices/creating-a-safari-web-extension)
 
