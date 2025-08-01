@@ -2,7 +2,7 @@
 Majority of the browsers use the Chrome extension. Here is an overview of the caveats of the Chrome extension.
 
 # Releases
-
+- [1.0.2](https://chromewebstore.google.com/detail/press-id-badge/clhegnbaeappncfdcifmilpobeialmjp) on July 25, 2025
 - [1.0.1](https://chromewebstore.google.com/detail/press-id-badge/clhegnbaeappncfdcifmilpobeialmjp) on July 22, 2025
 - 1.0.0 rejected for three uncessary permissions
 
