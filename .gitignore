@@ -3,3 +3,5 @@ package-lock.json
 *.crx
 *.zip
 node_modules/
+php_errors.log
+web-ext-artifacts/
