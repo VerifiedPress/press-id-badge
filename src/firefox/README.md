@@ -4,7 +4,7 @@ For testing the extension, see [public/](../../public/README.md)
 [Porting Chrome extenstion to Firefox](https://extensionworkshop.com/documentation/develop/porting-a-google-chrome-extension/)
 
 # Releases
-- 1.0.2 WIP
+- 1.0.2 submitted to [https://addons.mozilla.org](https://addons.mozilla.org) on August 1, 2025
 - 1.0.1 not released
 - 1.0.0 not released
 
