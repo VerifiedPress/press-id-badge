@@ -153,43 +153,60 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
       }
     case "SHOW_POPUP_DIALOG":
       {
-        //chrome.action.openPopup();
-        browser.windows.create({
-          url: "popup.html",
+        const popupUrl = browser.runtime.getURL("popup/popup.html");
+        await browser.windows.create({
+          url: popupUrl,
           type: "popup",
-          width: 500,
+          width: 310, // Initial guess
           height: 400
         });
-
         return true; // ✅ This keeps the port alive
       }
     case "SIGN_MESSAGE":
       {
-        const { key, message } = msg;
+        (async () => {
+          const { key, message } = msg;
 
-        if (key && message) {
-          const signature = await performCredentialSigning(key, message);
-          sendResponse({ signature: signature });
-          
-          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            if (tabs.length === 0) {
-              console.error("No active tab found for broadcast.");
-              return;
+          if (key && message) {
+            try {
+              const signature = await performCredentialSigning(key, message);
+              sendResponse({ signature });
+
+              // 🔄 Broadcast to active tab
+              chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                if (tabs.length === 0) {
+                  console.warn("No active tab found for signature broadcast.");
+                  return;
+                }
+
+                chrome.tabs.sendMessage(
+                  tabs[0].id,
+                  {
+                    type: "SIGNATURE_BROADCAST",
+                    signature,
+                    metadata: {
+                      timestamp: Date.now(),
+                      origin: chrome.runtime?.id || "unknown-extension"
+                    }
+                  },
+                  (response) => {
+                    if (chrome.runtime.lastError) {
+                      console.warn("Broadcast failed:", chrome.runtime.lastError.message);
+                    } else {
+                      console.log("📨 Broadcast response:", response);
+                    }
+                  }
+                );
+              });
+            } catch (err) {
+              sendResponse({ error: err.message });
             }
+          } else {
+            sendResponse({ error: `Missing key=${key} and/or message=${message}` });
+          }
+        })();
 
-            chrome.tabs.sendMessage(tabs[0].id, {
-              type: "SIGNATURE_BROADCAST",
-              signature
-            }, function (response) {
-              if (chrome.runtime.lastError) {
-                //console.error("Failed to send message to content script:", chrome.runtime.lastError.message);
-              }
-            });
-          });        
-        } else {
-          sendResponse({ error: `missing key=${key} and/or message=${message}` });
-        }
-        return true; // ✅ This keeps the port alive
+        return true; // 🛡️ Keeps the message channel open
       }
     case "VERIFY_SIGNATURE":
       {
@@ -205,5 +222,6 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
   }
 });
 
-chrome.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener((event) => {
 });
+

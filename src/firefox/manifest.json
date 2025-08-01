@@ -12,10 +12,17 @@
   },
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "scripting"
   ],
   "background": {
     "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "press-id-badge@verifiedpress.org",
+      "strict_min_version": "88.0"
+    }
   },
   "action": {
     "default_popup": "popup/popup.html",
@@ -24,7 +31,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js","popup.js"],
+      "js": ["content.js","popup/popup.js"],
       "run_at": "document_start"
     }
   ]
