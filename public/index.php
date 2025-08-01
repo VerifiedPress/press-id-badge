@@ -84,8 +84,6 @@
         window.addEventListener("message", async function (e) {
             if (!e.data || typeof e.data !== "object") return;
 
-            console.log(e);
-
             if (e.data.type === "USER_PARAMS_RESPONSE") {
                 console.log(e);
                 const {did, privateKey} = e.data;
