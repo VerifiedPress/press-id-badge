@@ -11,13 +11,13 @@ Your Decentralized Identification (DiD) credentials are created using the verifi
 
 | Browser     | Extension Architecture       | Chrome Extension Compatibility | Notes |
 |-------------|------------------------------|-------------------------------|-------|
-| [**Chrome**](src/chrome/README.md)   | WebExtension (Chromium-native) | ✅ Native                     | Full support for `manifest.json`, `chrome.*` APIs |
-| [**Edge**](src/edge/README.md)     | Chromium-based Extension       | ✅ Native                     | Uses same engine as Chrome; extensions install directly |
-| [**Opera**](src/opera/README.md)    | Chromium-based Extension       | ✅ Native                     | Extensions from Chrome Web Store work seamlessly |
-| [**Brave**](src/brave/README.md)    | Chromium-based Extension       | ✅ Native                     | Extension APIs and behavior match Chrome closely |
-| [**Vivaldi**](src/vivaldi/README.md)  | Chromium-based Extension       | ✅ Native                     | Custom UI shell, but supports all Chrome extensions |
-| [**Firefox**](src/firefox/README.md)  | WebExtension (Gecko engine)    | ⚠️ Mostly Compatible          | Uses `browser.*` namespace; good Chrome API coverage but not perfect |
-| [**Safari**](src/safari/README.md)   | Safari App Extension           | ⚠️ Partial Compatibility      | Requires Xcode packaging; some `chrome.*` APIs via polyfill or rewrite |
+| [**Chrome**](src/chrome/README.md)[Download](https://www.google.com/chrome/bsem/download)   | WebExtension (Chromium-native) | ✅ Native                     | Full support for `manifest.json`, `chrome.*` APIs |
+| [**Edge**](src/edge/README.md)[Download](https://www.microsoft.com/en-us/edge/)     | Chromium-based Extension       | ✅ Native                     | Uses same engine as Chrome; extensions install directly |
+| [**Opera**](src/opera/README.md)[Download](https://www.opera.com/)    | Chromium-based Extension       | ✅ Native                     | Extensions from Chrome Web Store work seamlessly |
+| [**Brave**](src/brave/README.md)[Download](https://brave.com/download/)    | Chromium-based Extension       | ✅ Native                     | Extension APIs and behavior match Chrome closely |
+| [**Vivaldi**](src/vivaldi/README.md)[Download](https://vivaldi.com/download/)  | Chromium-based Extension       | ✅ Native                     | Custom UI shell, but supports all Chrome extensions |
+| [**Firefox**](src/firefox/README.md)[Download](https://www.firefox.com/)  | WebExtension (Gecko engine)    | ⚠️ Mostly Compatible          | Uses `browser.*` namespace; good Chrome API coverage but not perfect |
+| [**Safari**](src/safari/README.md)[Download](https://www.apple.com/safari/)   | Safari App Extension           | ⚠️ Partial Compatibility      | Requires Xcode packaging; some `chrome.*` APIs via polyfill or rewrite |
 
 
 ## 📰 Overview: Press ID Badge Browser Extension
