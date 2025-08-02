@@ -230,6 +230,7 @@ Absolutely—here’s an expanded comparison of **Technologies by Phase** from W
 
 | Web Version | Era         | Core Technologies                                                                 |
 |-------------|-------------|------------------------------------------------------------------------------------|
+| **Pre-Web** | ~1978–1990  | BBS, dial-up, Usenet, forums, early chatrooms         |
 | **Web1**    | ~1990–2004  | HTML, HTTP, static websites, basic hyperlinks                                     |
 | **Web2**    | ~2004–2020  | JavaScript, AJAX, REST APIs, social platforms, mobile apps                        |
 | **Web3**    | ~2020–2025  | Blockchain, smart contracts, DIDs, Verifiable Credentials, IPFS, crypto wallets   |
