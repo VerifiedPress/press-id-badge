@@ -5,3 +5,4 @@ package-lock.json
 node_modules/
 php_errors.log
 web-ext-artifacts/
+images/
