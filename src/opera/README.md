@@ -1,4 +1,7 @@
 # Opera Browser Extension
+The Opera browser extension for Press ID Badge.
+
+![promotional](./promotional.png)
 
 [The Basics of Making an Extension](https://help.opera.com/en/extensions/basics/)
 
