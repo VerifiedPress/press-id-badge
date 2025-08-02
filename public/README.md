@@ -95,6 +95,7 @@ Effectively eliminating the userid-password-2fa model in the traditional sense, 
 
 Verification is perform on publicly accessible identity documents that were provided during a registration process.
 
+The user is required to provide a publically accessible URL for the DiD identity document with the public_key.pem file. If the user does not have a public website, the easiest option is to create a free github.com repository and an assoicated gitpage for that repository, then provide the gitpage URL to the service. Only the public_key.pem is available on git pages, keeping the private key used for signing messages locally and safe. **DO NOT UPLOAD THE PRIVATE KEY TO GITHUB!**
 
 ## Overview
 ![overview](../images/updated-blockdiagram-with-flow.png)
