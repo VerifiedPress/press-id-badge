@@ -6,3 +6,4 @@ node_modules/
 php_errors.log
 web-ext-artifacts/
 images/
+._*
