@@ -38,6 +38,20 @@ change to the extension tab and check the **Press ID Badge** extension to enable
 
 ![press-id-badge](images/extension-001.png)
 
+you may need to grant permissions
+
+![permissions](images/allow-on-localhost.png)
+
+start PHP
+```sh
+cd ../../public
+php -S localhost:8082 -t .
+```
+
+then open safari browser to [http://localhost:8082](http://localhost:8082)
+
+![localhost](images/localhost.png)
+
 # Releases
 - 1.0.2 WIP
 - 1.0.1 not released
