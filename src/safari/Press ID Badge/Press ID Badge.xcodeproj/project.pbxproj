@@ -1,0 +1,985 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6ED8B5952E3F059900D50B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B5942E3F059900D50B9B /* AppDelegate.swift */; };
+		6ED8B5972E3F059900D50B9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B5962E3F059900D50B9B /* SceneDelegate.swift */; };
+		6ED8B59A2E3F059900D50B9B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5992E3F059900D50B9B /* Base */; };
+		6ED8B59D2E3F059900D50B9B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B59C2E3F059900D50B9B /* Base */; };
+		6ED8B5A62E3F059900D50B9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B5A52E3F059900D50B9B /* AppDelegate.swift */; };
+		6ED8B5A92E3F059900D50B9B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5A82E3F059900D50B9B /* Base */; };
+		6ED8B5B12E3F059900D50B9B /* Press ID Badge Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6ED8B5B02E3F059900D50B9B /* Press ID Badge Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6ED8B5BB2E3F059900D50B9B /* Press ID Badge Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6ED8B5BA2E3F059900D50B9B /* Press ID Badge Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6ED8B5C12E3F059A00D50B9B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5852E3F059800D50B9B /* Base */; };
+		6ED8B5C22E3F059A00D50B9B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5852E3F059800D50B9B /* Base */; };
+		6ED8B5C32E3F059A00D50B9B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5862E3F059800D50B9B /* Icon.png */; };
+		6ED8B5C42E3F059A00D50B9B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5862E3F059800D50B9B /* Icon.png */; };
+		6ED8B5C52E3F059A00D50B9B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5872E3F059800D50B9B /* Style.css */; };
+		6ED8B5C62E3F059A00D50B9B /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5872E3F059800D50B9B /* Style.css */; };
+		6ED8B5C72E3F059A00D50B9B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5882E3F059800D50B9B /* Script.js */; };
+		6ED8B5C82E3F059A00D50B9B /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5882E3F059800D50B9B /* Script.js */; };
+		6ED8B5C92E3F059A00D50B9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B5892E3F059800D50B9B /* ViewController.swift */; };
+		6ED8B5CA2E3F059A00D50B9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B5892E3F059800D50B9B /* ViewController.swift */; };
+		6ED8B5CB2E3F059A00D50B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B58A2E3F059900D50B9B /* Assets.xcassets */; };
+		6ED8B5CC2E3F059A00D50B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B58A2E3F059900D50B9B /* Assets.xcassets */; };
+		6ED8B5CD2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */; };
+		6ED8B5CE2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */; };
+		6ED8B5E82E3F059A00D50B9B /* ISSUES.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E02E3F059A00D50B9B /* ISSUES.md */; };
+		6ED8B5E92E3F059A00D50B9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E12E3F059A00D50B9B /* README.md */; };
+		6ED8B5EA2E3F059A00D50B9B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E22E3F059A00D50B9B /* background.js */; };
+		6ED8B5EB2E3F059A00D50B9B /* css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E32E3F059A00D50B9B /* css */; };
+		6ED8B5EC2E3F059A00D50B9B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E42E3F059A00D50B9B /* images */; };
+		6ED8B5ED2E3F059A00D50B9B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E52E3F059A00D50B9B /* manifest.json */; };
+		6ED8B5EE2E3F059A00D50B9B /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E62E3F059A00D50B9B /* popup */; };
+		6ED8B5EF2E3F059A00D50B9B /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E72E3F059A00D50B9B /* scripts */; };
+		6ED8B5F02E3F059A00D50B9B /* ISSUES.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E02E3F059A00D50B9B /* ISSUES.md */; };
+		6ED8B5F12E3F059A00D50B9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E12E3F059A00D50B9B /* README.md */; };
+		6ED8B5F22E3F059A00D50B9B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E22E3F059A00D50B9B /* background.js */; };
+		6ED8B5F32E3F059A00D50B9B /* css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E32E3F059A00D50B9B /* css */; };
+		6ED8B5F42E3F059A00D50B9B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E42E3F059A00D50B9B /* images */; };
+		6ED8B5F52E3F059A00D50B9B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E52E3F059A00D50B9B /* manifest.json */; };
+		6ED8B5F62E3F059A00D50B9B /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E62E3F059A00D50B9B /* popup */; };
+		6ED8B5F72E3F059A00D50B9B /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E72E3F059A00D50B9B /* scripts */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6ED8B5B22E3F059900D50B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED8B57E2E3F059700D50B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ED8B5AF2E3F059900D50B9B;
+			remoteInfo = "Press ID Badge Extension (iOS)";
+		};
+		6ED8B5BC2E3F059900D50B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6ED8B57E2E3F059700D50B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6ED8B5B92E3F059900D50B9B;
+			remoteInfo = "Press ID Badge Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6ED8B5D42E3F059A00D50B9B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6ED8B5B12E3F059900D50B9B /* Press ID Badge Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5DB2E3F059A00D50B9B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6ED8B5BB2E3F059900D50B9B /* Press ID Badge Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6ED8B5852E3F059800D50B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		6ED8B5862E3F059800D50B9B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6ED8B5872E3F059800D50B9B /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		6ED8B5882E3F059800D50B9B /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		6ED8B5892E3F059800D50B9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6ED8B58A2E3F059900D50B9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		6ED8B5912E3F059900D50B9B /* Press ID Badge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Press ID Badge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED8B5942E3F059900D50B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6ED8B5962E3F059900D50B9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6ED8B5992E3F059900D50B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6ED8B59C2E3F059900D50B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6ED8B59E2E3F059900D50B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED8B5A32E3F059900D50B9B /* Press ID Badge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Press ID Badge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED8B5A52E3F059900D50B9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6ED8B5A82E3F059900D50B9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6ED8B5AA2E3F059900D50B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED8B5AB2E3F059900D50B9B /* Press ID Badge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Press ID Badge.entitlements"; sourceTree = "<group>"; };
+		6ED8B5B02E3F059900D50B9B /* Press ID Badge Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Press ID Badge Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED8B5B52E3F059900D50B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED8B5BA2E3F059900D50B9B /* Press ID Badge Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Press ID Badge Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ED8B5BF2E3F059A00D50B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ED8B5C02E3F059A00D50B9B /* Press ID Badge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Press ID Badge.entitlements"; sourceTree = "<group>"; };
+		6ED8B5E02E3F059A00D50B9B /* ISSUES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = ISSUES.md; path = ../../../chrome/ISSUES.md; sourceTree = "<group>"; };
+		6ED8B5E12E3F059A00D50B9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../chrome/README.md; sourceTree = "<group>"; };
+		6ED8B5E22E3F059A00D50B9B /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../chrome/background.js; sourceTree = "<group>"; };
+		6ED8B5E32E3F059A00D50B9B /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; name = css; path = ../../../chrome/css; sourceTree = "<group>"; };
+		6ED8B5E42E3F059A00D50B9B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../../chrome/images; sourceTree = "<group>"; };
+		6ED8B5E52E3F059A00D50B9B /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../chrome/manifest.json; sourceTree = "<group>"; };
+		6ED8B5E62E3F059A00D50B9B /* popup */ = {isa = PBXFileReference; lastKnownFileType = folder; name = popup; path = ../../../chrome/popup; sourceTree = "<group>"; };
+		6ED8B5E72E3F059A00D50B9B /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../../../chrome/scripts; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6ED8B58E2E3F059900D50B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5A02E3F059900D50B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5AD2E3F059900D50B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5B72E3F059900D50B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6ED8B57D2E3F059700D50B9B = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5822E3F059800D50B9B /* Shared (App) */,
+				6ED8B58B2E3F059900D50B9B /* Shared (Extension) */,
+				6ED8B5932E3F059900D50B9B /* iOS (App) */,
+				6ED8B5A42E3F059900D50B9B /* macOS (App) */,
+				6ED8B5B42E3F059900D50B9B /* iOS (Extension) */,
+				6ED8B5BE2E3F059A00D50B9B /* macOS (Extension) */,
+				6ED8B5922E3F059900D50B9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6ED8B5822E3F059800D50B9B /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5892E3F059800D50B9B /* ViewController.swift */,
+				6ED8B58A2E3F059900D50B9B /* Assets.xcassets */,
+				6ED8B5832E3F059800D50B9B /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		6ED8B5832E3F059800D50B9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5842E3F059800D50B9B /* Main.html */,
+				6ED8B5862E3F059800D50B9B /* Icon.png */,
+				6ED8B5872E3F059800D50B9B /* Style.css */,
+				6ED8B5882E3F059800D50B9B /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6ED8B58B2E3F059900D50B9B /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5DF2E3F059A00D50B9B /* Resources */,
+				6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		6ED8B5922E3F059900D50B9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5912E3F059900D50B9B /* Press ID Badge.app */,
+				6ED8B5A32E3F059900D50B9B /* Press ID Badge.app */,
+				6ED8B5B02E3F059900D50B9B /* Press ID Badge Extension.appex */,
+				6ED8B5BA2E3F059900D50B9B /* Press ID Badge Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6ED8B5932E3F059900D50B9B /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5942E3F059900D50B9B /* AppDelegate.swift */,
+				6ED8B5962E3F059900D50B9B /* SceneDelegate.swift */,
+				6ED8B5982E3F059900D50B9B /* LaunchScreen.storyboard */,
+				6ED8B59B2E3F059900D50B9B /* Main.storyboard */,
+				6ED8B59E2E3F059900D50B9B /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		6ED8B5A42E3F059900D50B9B /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5A52E3F059900D50B9B /* AppDelegate.swift */,
+				6ED8B5A72E3F059900D50B9B /* Main.storyboard */,
+				6ED8B5AA2E3F059900D50B9B /* Info.plist */,
+				6ED8B5AB2E3F059900D50B9B /* Press ID Badge.entitlements */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		6ED8B5B42E3F059900D50B9B /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5B52E3F059900D50B9B /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		6ED8B5BE2E3F059A00D50B9B /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5BF2E3F059A00D50B9B /* Info.plist */,
+				6ED8B5C02E3F059A00D50B9B /* Press ID Badge.entitlements */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		6ED8B5DF2E3F059A00D50B9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6ED8B5E02E3F059A00D50B9B /* ISSUES.md */,
+				6ED8B5E12E3F059A00D50B9B /* README.md */,
+				6ED8B5E22E3F059A00D50B9B /* background.js */,
+				6ED8B5E32E3F059A00D50B9B /* css */,
+				6ED8B5E42E3F059A00D50B9B /* images */,
+				6ED8B5E52E3F059A00D50B9B /* manifest.json */,
+				6ED8B5E62E3F059A00D50B9B /* popup */,
+				6ED8B5E72E3F059A00D50B9B /* scripts */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6ED8B5902E3F059900D50B9B /* Press ID Badge (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED8B5D52E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge (iOS)" */;
+			buildPhases = (
+				6ED8B58D2E3F059900D50B9B /* Sources */,
+				6ED8B58E2E3F059900D50B9B /* Frameworks */,
+				6ED8B58F2E3F059900D50B9B /* Resources */,
+				6ED8B5D42E3F059A00D50B9B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED8B5B32E3F059900D50B9B /* PBXTargetDependency */,
+			);
+			name = "Press ID Badge (iOS)";
+			productName = "Press ID Badge (iOS)";
+			productReference = 6ED8B5912E3F059900D50B9B /* Press ID Badge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6ED8B5A22E3F059900D50B9B /* Press ID Badge (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED8B5DC2E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge (macOS)" */;
+			buildPhases = (
+				6ED8B59F2E3F059900D50B9B /* Sources */,
+				6ED8B5A02E3F059900D50B9B /* Frameworks */,
+				6ED8B5A12E3F059900D50B9B /* Resources */,
+				6ED8B5DB2E3F059A00D50B9B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED8B5BD2E3F059900D50B9B /* PBXTargetDependency */,
+			);
+			name = "Press ID Badge (macOS)";
+			productName = "Press ID Badge (macOS)";
+			productReference = 6ED8B5A32E3F059900D50B9B /* Press ID Badge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6ED8B5AF2E3F059900D50B9B /* Press ID Badge Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED8B5D12E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge Extension (iOS)" */;
+			buildPhases = (
+				6ED8B5AC2E3F059900D50B9B /* Sources */,
+				6ED8B5AD2E3F059900D50B9B /* Frameworks */,
+				6ED8B5AE2E3F059900D50B9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Press ID Badge Extension (iOS)";
+			productName = "Press ID Badge Extension (iOS)";
+			productReference = 6ED8B5B02E3F059900D50B9B /* Press ID Badge Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6ED8B5B92E3F059900D50B9B /* Press ID Badge Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6ED8B5D82E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge Extension (macOS)" */;
+			buildPhases = (
+				6ED8B5B62E3F059900D50B9B /* Sources */,
+				6ED8B5B72E3F059900D50B9B /* Frameworks */,
+				6ED8B5B82E3F059900D50B9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Press ID Badge Extension (macOS)";
+			productName = "Press ID Badge Extension (macOS)";
+			productReference = 6ED8B5BA2E3F059900D50B9B /* Press ID Badge Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6ED8B57E2E3F059700D50B9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					6ED8B5902E3F059900D50B9B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6ED8B5A22E3F059900D50B9B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6ED8B5AF2E3F059900D50B9B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					6ED8B5B92E3F059900D50B9B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 6ED8B5812E3F059700D50B9B /* Build configuration list for PBXProject "Press ID Badge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6ED8B57D2E3F059700D50B9B;
+			productRefGroup = 6ED8B5922E3F059900D50B9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6ED8B5902E3F059900D50B9B /* Press ID Badge (iOS) */,
+				6ED8B5A22E3F059900D50B9B /* Press ID Badge (macOS) */,
+				6ED8B5AF2E3F059900D50B9B /* Press ID Badge Extension (iOS) */,
+				6ED8B5B92E3F059900D50B9B /* Press ID Badge Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6ED8B58F2E3F059900D50B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5C32E3F059A00D50B9B /* Icon.png in Resources */,
+				6ED8B59A2E3F059900D50B9B /* Base in Resources */,
+				6ED8B5C12E3F059A00D50B9B /* Base in Resources */,
+				6ED8B5C72E3F059A00D50B9B /* Script.js in Resources */,
+				6ED8B5CB2E3F059A00D50B9B /* Assets.xcassets in Resources */,
+				6ED8B59D2E3F059900D50B9B /* Base in Resources */,
+				6ED8B5C52E3F059A00D50B9B /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5A12E3F059900D50B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5C42E3F059A00D50B9B /* Icon.png in Resources */,
+				6ED8B5C62E3F059A00D50B9B /* Style.css in Resources */,
+				6ED8B5A92E3F059900D50B9B /* Base in Resources */,
+				6ED8B5C82E3F059A00D50B9B /* Script.js in Resources */,
+				6ED8B5CC2E3F059A00D50B9B /* Assets.xcassets in Resources */,
+				6ED8B5C22E3F059A00D50B9B /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5AE2E3F059900D50B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5F42E3F059A00D50B9B /* images in Resources */,
+				6ED8B5F32E3F059A00D50B9B /* css in Resources */,
+				6ED8B5F12E3F059A00D50B9B /* README.md in Resources */,
+				6ED8B5F22E3F059A00D50B9B /* background.js in Resources */,
+				6ED8B5F52E3F059A00D50B9B /* manifest.json in Resources */,
+				6ED8B5F02E3F059A00D50B9B /* ISSUES.md in Resources */,
+				6ED8B5F62E3F059A00D50B9B /* popup in Resources */,
+				6ED8B5F72E3F059A00D50B9B /* scripts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5B82E3F059900D50B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5EC2E3F059A00D50B9B /* images in Resources */,
+				6ED8B5EB2E3F059A00D50B9B /* css in Resources */,
+				6ED8B5E92E3F059A00D50B9B /* README.md in Resources */,
+				6ED8B5EA2E3F059A00D50B9B /* background.js in Resources */,
+				6ED8B5ED2E3F059A00D50B9B /* manifest.json in Resources */,
+				6ED8B5E82E3F059A00D50B9B /* ISSUES.md in Resources */,
+				6ED8B5EE2E3F059A00D50B9B /* popup in Resources */,
+				6ED8B5EF2E3F059A00D50B9B /* scripts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6ED8B58D2E3F059900D50B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5C92E3F059A00D50B9B /* ViewController.swift in Sources */,
+				6ED8B5952E3F059900D50B9B /* AppDelegate.swift in Sources */,
+				6ED8B5972E3F059900D50B9B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B59F2E3F059900D50B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5CA2E3F059A00D50B9B /* ViewController.swift in Sources */,
+				6ED8B5A62E3F059900D50B9B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5AC2E3F059900D50B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5CD2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6ED8B5B62E3F059900D50B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED8B5CE2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6ED8B5B32E3F059900D50B9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ED8B5AF2E3F059900D50B9B /* Press ID Badge Extension (iOS) */;
+			targetProxy = 6ED8B5B22E3F059900D50B9B /* PBXContainerItemProxy */;
+		};
+		6ED8B5BD2E3F059900D50B9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6ED8B5B92E3F059900D50B9B /* Press ID Badge Extension (macOS) */;
+			targetProxy = 6ED8B5BC2E3F059900D50B9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6ED8B5842E3F059800D50B9B /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED8B5852E3F059800D50B9B /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		6ED8B5982E3F059900D50B9B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED8B5992E3F059900D50B9B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6ED8B59B2E3F059900D50B9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED8B59C2E3F059900D50B9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6ED8B5A72E3F059900D50B9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6ED8B5A82E3F059900D50B9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6ED8B5CF2E3F059A00D50B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx14.4;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6ED8B5D02E3F059A00D50B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx14.4;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		6ED8B5D22E3F059A00D50B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge.Extension";
+				PRODUCT_NAME = "Press ID Badge Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6ED8B5D32E3F059A00D50B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge.Extension";
+				PRODUCT_NAME = "Press ID Badge Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ED8B5D62E3F059A00D50B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge";
+				PRODUCT_NAME = "Press ID Badge";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6ED8B5D72E3F059A00D50B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge";
+				PRODUCT_NAME = "Press ID Badge";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6ED8B5D92E3F059A00D50B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Press ID Badge.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge.Extension";
+				PRODUCT_NAME = "Press ID Badge Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6ED8B5DA2E3F059A00D50B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Press ID Badge.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge.Extension";
+				PRODUCT_NAME = "Press ID Badge Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6ED8B5DD2E3F059A00D50B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Press ID Badge.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8379JDXGLX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge";
+				PRODUCT_NAME = "Press ID Badge";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6ED8B5DE2E3F059A00D50B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Press ID Badge.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8379JDXGLX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Press ID Badge";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.verifiedpress.press-id-badge";
+				PRODUCT_NAME = "Press ID Badge";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6ED8B5812E3F059700D50B9B /* Build configuration list for PBXProject "Press ID Badge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED8B5CF2E3F059A00D50B9B /* Debug */,
+				6ED8B5D02E3F059A00D50B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED8B5D12E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED8B5D22E3F059A00D50B9B /* Debug */,
+				6ED8B5D32E3F059A00D50B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED8B5D52E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED8B5D62E3F059A00D50B9B /* Debug */,
+				6ED8B5D72E3F059A00D50B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED8B5D82E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED8B5D92E3F059A00D50B9B /* Debug */,
+				6ED8B5DA2E3F059A00D50B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED8B5DC2E3F059A00D50B9B /* Build configuration list for PBXNativeTarget "Press ID Badge (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6ED8B5DD2E3F059A00D50B9B /* Debug */,
+				6ED8B5DE2E3F059A00D50B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6ED8B57E2E3F059700D50B9B /* Project object */;
+}

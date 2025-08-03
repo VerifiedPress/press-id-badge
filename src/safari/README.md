@@ -3,7 +3,30 @@ For MacOSX-**ONLY**
 
 [Creating an Extension](https://developer.apple.com/documentation/safariservices/creating-a-safari-web-extension)
 
+# Converting Chrome
 [Converting Chrome extension to Safari](https://bartsolutions.github.io/2020/11/20/safari-extension/)
+
+```sh
+cd src/safari
+xcrun safari-web-extension-converter ../chrome
+Xcode Project Location: ./press-id-badge/src/safari
+App Name: Press ID Badge
+App Bundle Identifier: com.yourCompany.Press-ID-Badge
+Platform: All
+Language: Swift
+Warning: Unable to add icons to created project:
+Error Domain=SafariWebExtensionConverterErrorDomain Code=-1 "manifest.json is missing icons" UserInfo={NSLocalizedDescription=manifest.json is missing icons}
+Warning: Unable to add a large icon image to created project:
+Error Domain=SafariWebExtensionConverterErrorDomain Code=-1 "manifest.json is missing a large icon size" UserInfo={NSLocalizedDescription=manifest.json is missing a large icon size}
+```
+
+from XCode,
+
+![xcode-001.png](images/xcode-001.png)
+
+set the caregory to **Productivity**.
+
+
 
 # Releases
 - 1.0.2 WIP
