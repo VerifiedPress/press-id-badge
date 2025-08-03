@@ -34,5 +34,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
 
         context.completeRequest(returningItems: [ response ], completionHandler: nil)
     }
+    
+    func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
+        if messageName == "triggerUploadInPage" {
+            page.dispatchMessageToScript(withName: "initiateUpload", userInfo: nil)
+        }
+    }
 
 }

@@ -16,7 +16,7 @@ import SafariServices
 typealias PlatformViewController = NSViewController
 #endif
 
-let extensionBundleIdentifier = "com.yourCompany.Press-ID-Badge.Extension"
+let extensionBundleIdentifier = "org.verifiedpress.press-id-badge.Extension"
 
 class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
 
