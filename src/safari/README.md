@@ -26,7 +26,17 @@ from XCode,
 
 set the caregory to **Productivity**.
 
+launch safaru and navigate to safari -> settings -> advancedm and check **Show features for web develoeprs**
 
+![settings](images/safari-settings.png)
+
+then switch to the Developer tab, and check **Allow unassigned extensions**
+
+![extensions](images/safari-extensions.png)
+
+change to the extension tab and check the **Press ID Badge** extension to enable
+
+![press-id-badge](images/extension-001.png)
 
 # Releases
 - 1.0.2 WIP
