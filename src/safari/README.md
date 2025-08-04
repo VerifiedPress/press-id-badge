@@ -68,7 +68,20 @@ and verify with the JWK,
 
 ![validate with jwk](images/validated-jwk.png)
 
+# Distribution
+
+![distribute-001](images/distribute-001.png)
+![distribute-002](images/distribute-002.png)
+![distribute-003](images/distribute-003.png)
+![distribute-004](images/distribute-004.png)
+![distribute-005](images/distribute-005.png)
+![distribute-006](images/distribute-006.png)
+![distribute-007](images/distribute-007.png)
+![distribute-008](images/distribute-008.png)
+![distribute-009](images/distribute-009.png)
+
+
 # Releases
-- 1.0.2 WIP
+- 1.0.2 preparing for AppStore submission
 - 1.0.1 not released
 - 1.0.0 not released
