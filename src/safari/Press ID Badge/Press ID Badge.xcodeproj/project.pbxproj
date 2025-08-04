@@ -29,16 +29,12 @@
 		6ED8B5CC2E3F059A00D50B9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B58A2E3F059900D50B9B /* Assets.xcassets */; };
 		6ED8B5CD2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */; };
 		6ED8B5CE2E3F059A00D50B9B /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8B58C2E3F059900D50B9B /* SafariWebExtensionHandler.swift */; };
-		6ED8B5E82E3F059A00D50B9B /* ISSUES.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E02E3F059A00D50B9B /* ISSUES.md */; };
-		6ED8B5E92E3F059A00D50B9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E12E3F059A00D50B9B /* README.md */; };
 		6ED8B5EA2E3F059A00D50B9B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E22E3F059A00D50B9B /* background.js */; };
 		6ED8B5EB2E3F059A00D50B9B /* css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E32E3F059A00D50B9B /* css */; };
 		6ED8B5EC2E3F059A00D50B9B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E42E3F059A00D50B9B /* images */; };
 		6ED8B5ED2E3F059A00D50B9B /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E52E3F059A00D50B9B /* manifest.json */; };
 		6ED8B5EE2E3F059A00D50B9B /* popup in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E62E3F059A00D50B9B /* popup */; };
 		6ED8B5EF2E3F059A00D50B9B /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E72E3F059A00D50B9B /* scripts */; };
-		6ED8B5F02E3F059A00D50B9B /* ISSUES.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E02E3F059A00D50B9B /* ISSUES.md */; };
-		6ED8B5F12E3F059A00D50B9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E12E3F059A00D50B9B /* README.md */; };
 		6ED8B5F22E3F059A00D50B9B /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E22E3F059A00D50B9B /* background.js */; };
 		6ED8B5F32E3F059A00D50B9B /* css in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E32E3F059A00D50B9B /* css */; };
 		6ED8B5F42E3F059A00D50B9B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8B5E42E3F059A00D50B9B /* images */; };
@@ -113,8 +109,6 @@
 		6ED8B5BA2E3F059900D50B9B /* Press ID Badge Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Press ID Badge Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED8B5BF2E3F059A00D50B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ED8B5C02E3F059A00D50B9B /* Press ID Badge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Press ID Badge.entitlements"; sourceTree = "<group>"; };
-		6ED8B5E02E3F059A00D50B9B /* ISSUES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = ISSUES.md; path = ../../../chrome/ISSUES.md; sourceTree = "<group>"; };
-		6ED8B5E12E3F059A00D50B9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../chrome/README.md; sourceTree = "<group>"; };
 		6ED8B5E22E3F059A00D50B9B /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../../chrome/background.js; sourceTree = "<group>"; };
 		6ED8B5E32E3F059A00D50B9B /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; name = css; path = ../../../chrome/css; sourceTree = "<group>"; };
 		6ED8B5E42E3F059A00D50B9B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../../chrome/images; sourceTree = "<group>"; };
@@ -252,8 +246,6 @@
 		6ED8B5DF2E3F059A00D50B9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6ED8B5E02E3F059A00D50B9B /* ISSUES.md */,
-				6ED8B5E12E3F059A00D50B9B /* README.md */,
 				6ED8B5E22E3F059A00D50B9B /* background.js */,
 				6ED8B5E32E3F059A00D50B9B /* css */,
 				6ED8B5E42E3F059A00D50B9B /* images */,
@@ -419,10 +411,8 @@
 			files = (
 				6ED8B5F42E3F059A00D50B9B /* images in Resources */,
 				6ED8B5F32E3F059A00D50B9B /* css in Resources */,
-				6ED8B5F12E3F059A00D50B9B /* README.md in Resources */,
 				6ED8B5F22E3F059A00D50B9B /* background.js in Resources */,
 				6ED8B5F52E3F059A00D50B9B /* manifest.json in Resources */,
-				6ED8B5F02E3F059A00D50B9B /* ISSUES.md in Resources */,
 				6ED8B5F62E3F059A00D50B9B /* popup in Resources */,
 				6ED8B5F72E3F059A00D50B9B /* scripts in Resources */,
 			);
@@ -434,10 +424,8 @@
 			files = (
 				6ED8B5EC2E3F059A00D50B9B /* images in Resources */,
 				6ED8B5EB2E3F059A00D50B9B /* css in Resources */,
-				6ED8B5E92E3F059A00D50B9B /* README.md in Resources */,
 				6ED8B5EA2E3F059A00D50B9B /* background.js in Resources */,
 				6ED8B5ED2E3F059A00D50B9B /* manifest.json in Resources */,
-				6ED8B5E82E3F059A00D50B9B /* ISSUES.md in Resources */,
 				6ED8B5EE2E3F059A00D50B9B /* popup in Resources */,
 				6ED8B5EF2E3F059A00D50B9B /* scripts in Resources */,
 			);
