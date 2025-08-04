@@ -3,6 +3,9 @@ For MacOSX-**ONLY**
 
 [Creating an Extension](https://developer.apple.com/documentation/safariservices/creating-a-safari-web-extension)
 
+**Difference with Safari Extension**
+The Safari extension does not provide and upload of the private key. Instead open the private_key.pem in a text editor and copy the contents to the Private Key field in the signing dialog popup.
+
 # Converting Chrome
 [Converting Chrome extension to Safari](https://bartsolutions.github.io/2020/11/20/safari-extension/)
 
