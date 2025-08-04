@@ -54,7 +54,7 @@ then open safari browser to [http://localhost:8082](http://localhost:8082)
 
 then press **Sign** to sign the message with the local private key,
 
-![signing](images/signing.png)
+![signing](images/signing-private-key.png)
 
 copy and paste the **private_key.pem** in the Private Key field above and press **Sign Message** button,
 
