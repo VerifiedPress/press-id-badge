@@ -20,7 +20,11 @@ window.onload = async function() {
     });
 
   const fileInput = document.getElementById("privateKeyFile");
+    fileInput.addEventListener("click", () => {
+        browser.runtime.sendMessage({ type: "triggerUploadInPage" });
+    })
 
+  /*
   fileInput.addEventListener("change", () => {
     const file = fileInput.files?.[0];
     if (!file) return;
@@ -37,6 +41,7 @@ window.onload = async function() {
     };
     reader.readAsText(file);  // Make sure this is .readAsText()
   });
+  */
 }
 
 document.getElementById("save").addEventListener("click", async () => {

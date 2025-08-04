@@ -11,6 +11,8 @@
  * All event listeners need to be statically registered in the global scope of the service worker. 
  * In other words, event listeners shouldn't be nested in async functions. 
  * This way Chrome can ensure that all event handlers are restored in case of a service worker reboot.
+ *
+ * Using browser.* API instead of chrome.* API for safari extension
  */
 async function importPublicKey(jwk) {
   return await crypto.subtle.importKey(
@@ -119,7 +121,7 @@ async function performCredentialSigning(key, message) {
 }
 
 
-chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
+browser.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
   const command = msg.command || msg.action || msg.type || "";
 
   switch(command) {
@@ -128,7 +130,7 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
         const { did, privateKey } = msg;
         
         // Save credentials to sync storage
-        chrome.storage.sync.set({
+          browser.storage.sync.set({
           pressid_credentials: { did, privateKey }
         }).then(() => {
           sendResponse({ saved: true });
@@ -141,7 +143,7 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
       }
     case "GET_USER_PARAMS":
       {
-        chrome.storage.sync.get("pressid_credentials").then(function(res, err){
+          browser.storage.sync.get("pressid_credentials").then(function(res, err){
           if (res.runtime.lastError) {
             console.error(err.message);
           } else {
@@ -152,7 +154,7 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
       }
     case "SHOW_POPUP_DIALOG":
       {
-        chrome.action.openPopup();
+          browser.action.openPopup();
       }
     case "SIGN_MESSAGE":
       {
@@ -161,18 +163,18 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
         if (key && message) {
           const signature = await performCredentialSigning(key, message);
           sendResponse({ signature: signature });
-          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             if (tabs.length === 0) {
               console.error("No active tab found for broadcast.");
               return;
             }
 
-            chrome.tabs.sendMessage(tabs[0].id, {
+            browser.tabs.sendMessage(tabs[0].id, {
               type: "SIGNATURE_BROADCAST",
               signature
             }, function (response) {
-              if (chrome.runtime.lastError) {
-                console.error("Failed to send message to content script:", chrome.runtime.lastError.message);
+              if (browser.runtime.lastError) {
+                console.error("Failed to send message to content script:", browser.runtime.lastError.message);
               }
             });
           });          
@@ -190,10 +192,19 @@ chrome.runtime.onMessage.addListener(async(msg, sender, sendResponse) => {
         }
         return true; // ✅ This keeps the port alive
       }
+    case "triggerUploadInPage":
+      {
+          browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+            if (tabs.length > 0 && tabs[0].id !== undefined) {
+              browser.tabs.sendMessage(tabs[0].id, { type: "initiateUpload" });
+            }
+          });
+          return true;
+      }
     default:
       console.log(`unknown command: ${command}`);
   }
 });
 
-chrome.runtime.onInstalled.addListener(() => {
+browser.runtime.onInstalled.addListener(() => {
 });

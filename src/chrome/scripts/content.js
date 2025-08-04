@@ -14,34 +14,34 @@ window.addEventListener("message", async function (event) {
   if (!event.data || typeof event.data !== "object") return; 
 
   if (event.data.command === "GET_USER_PARAMS") {
-        chrome.storage.sync.get("pressid_credentials").then(function(res, err){
+        browser.storage.sync.get("pressid_credentials").then(function(res, err){
           if (res.pressid_credentials) {
             if (document.getElementById("did")) {
               document.getElementById("did").value = res.pressid_credentials.did;
             }
-            chrome.storage.local.set({
+            browser.storage.local.set({
               dialog: "settings",
               didValue: res.pressid_credentials.did,
               keyValue: res.pressid_credentials.privateKey
             });
           } else {
-            chrome.storage.local.set({
+            browser.storage.local.set({
               dialog: "settings",
               didValue: "",
               keyValue: ""
             });
           }
-          chrome.runtime.sendMessage({ command: "SHOW_POPUP_DIALOG" });
+            browser.runtime.sendMessage({ command: "SHOW_POPUP_DIALOG" });
         });
         return true; // ⬅️ Critical: keeps message channel open
   } else if (event.data.command === "SHOW_SIGNING_DIALOG") {
-    chrome.storage.local.set({ dialog: "signing", message: event.data.message });
-    await chrome.runtime.sendMessage({command: "SHOW_POPUP_DIALOG" });
-  } 
+      browser.storage.local.set({ dialog: "signing", message: event.data.message });
+    await browser.runtime.sendMessage({command: "SHOW_POPUP_DIALOG" });
+  }
 
 });
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "SIGNATURE_BROADCAST") {
     window.postMessage({
       type: "SIGNATURE_READY",
@@ -50,9 +50,35 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     sendResponse({ received: true });
   } else if (message.type = "UPDATE_PUBLIC_DID") {
-    if (document.getElementById("did")) {
-      document.getElementById("did").value = message.didVal;
-    }
-    sendResponse({ received: true });
+      if (document.getElementById("did")) {
+          document.getElementById("did").value = message.didVal;
+      }
+      sendResponse({ received: true });
+  } else if (message.type === "initiateUpload") {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".pem";
+      input.style.display = "none";
+
+      input.addEventListener("change", () => {
+        const file = input.files?.[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = () => {
+          const key = typeof reader.result === "string" ? reader.result : "";
+          const target = document.getElementById("privateKeyPEM");
+          if (target) {
+            target.value = key;
+          } else {
+            console.warn("⚠️ #privateKeyPEM not found.");
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      document.body.appendChild(input);
+      input.click();
+      document.body.removeChild(input);
   }
 });
