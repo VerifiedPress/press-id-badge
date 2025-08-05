@@ -1,0 +1,25 @@
+name: Sync Live Monitoring (VerifiedPress)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  publish-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Pull Live Monitoring Data from VerifiedPress
+        run: |
+          curl -o fedramp/monitoring/live-status.json https://verifiedpress.org/api/status
+
+      - name: Commit & Push Updated Status
+        run: |
+          git config user.name "VerifiedPressBot"
+          git config user.email "bot@verifiedpress.org"
+          git add fedramp/monitoring/live-status.json
+          git commit -m "Sync VerifiedPress live status to fedramp/monitoring/"
+          git push

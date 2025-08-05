@@ -1,0 +1,27 @@
+name: Vulnerability Scan on GitFlow Merge
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  vuln-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run OWASP Dependency Check
+        uses: dependency-check/Dependency-Check_Action@v2
+        with:
+          project: "Press ID Badge"
+          format: "JSON"
+          out: "fedramp/monitoring/vuln-scan-results"
+          scan: "./"
+
+      - name: Parse and Append Results
+        run: php .github/scripts/append-scan-result.php

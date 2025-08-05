@@ -1,0 +1,19 @@
+{
+  "version": "25.04",
+  "assessment_date": "2025-08-05",
+  "validation_summary": "Draft submission pending final 3PAO review.",
+  "ksi": [
+    {
+      "id": "KSI-001",
+      "description": "MFA is enforced for all users",
+      "status": "True",
+      "evidence_link": "https://github.com/pingleware/press-id-badge/blob/main/fedramp/policy/mfa-policy.md"
+    },
+    {
+      "id": "KSI-002",
+      "description": "Data at rest is encrypted",
+      "status": "Partial",
+      "evidence_link": "https://github.com/pingleware/press-id-badge/blob/main/fedramp/policy/encryption-report.md"
+    }
+  ]
+}
