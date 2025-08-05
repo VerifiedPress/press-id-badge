@@ -1,0 +1,3 @@
+## Cloud Service Offering (CSO): Press ID Badge
+
+Press ID Badge is a modular identity verification and credentialing system for external users interacting with federal services (IRS, USCIS, SSA). The system issues privacy-respecting, DID-based credentials, with audit-traceable verification hosted in a secure cloud boundary. Mobile and browser modules execute signed flows locally and report validation status upstream.
