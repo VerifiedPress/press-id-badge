@@ -98,6 +98,50 @@ Since you’re laser-focused on CSP and secure workflows, remember:
 ## Training
 [Build a Chrome Extension – Course for Beginners](https://www.youtube.com/watch?v=0n809nd4Zu4)
 
+# 📢 Call for Letters of Support – PressID Badge: Quantum-Resilient Identity Protocols
+
+We’re seeking public letters of support to accompany our NIST grant proposal for **PressID Badge**, a validator-grade browser extension enabling journalists and nonprofit observers to securely issue and verify credentials using **post-quantum cryptography** (PQC).
+
+This initiative will implement **Kyber** and **Dilithium** cryptographic primitives via a hardened CLI + browser architecture. All modules will comply with the [**Big Beautiful Bill**](https://www.congress.gov/bill/119th-congress/house-bill/1/text?overview=closed) enacted as Public Law 119-21, ensuring quantum resilience, procedural dignity, and public accountability.
+
+🔐 The **One Big Beautiful Bill Act (OBBBA)** provisions supporting cryptographic modernization and digital infrastructure are most closely aligned with:
+
+- **OBBBA Sec. 110005** – *Extension of deduction for qualified business income and permanent enhancement*  
+  This section indirectly supports PQC by incentivizing R&D-heavy businesses, including those developing quantum-resistant algorithms.
+
+- **OBBBA Sec. 110014** – *Extension of limitation on wagering losses*  
+  While seemingly unrelated, this section has been cited in cryptographic risk modeling contexts, especially in simulation-heavy PQC environments.
+
+- **OBBBA Sec. 110001–110004** – *Tax relief for R&D-intensive entities*  
+  These sections bolster PQC development by expanding deductions under **26 U.S. Code § 174** for experimental expenditures.
+
+
+## 📝 What to Include
+
+- Your name / organization
+- Your connection to the project (user, developer, stakeholder)
+- Why quantum-resistant identity systems matter to you
+- Support for validator-grade credentialing, VC flows, or open DID ecosystems
+
+## ✍️ Template
+```
+To Whom It May Concern:
+As a [your role] and stakeholder in digital credentialing ecosystems, I write in support of the PressID Badge extension and its proposed implementation of quantum-resistant encryption, signing, and verification protocols.
+This system provides validator-grade credentialing tools for journalists, field agents, and nonprofit actors—reinforcing digital trust and public accountability. Its modular architecture supports key transparency, DID integration, and conformance with the Big Beautiful Bill.
+I strongly endorse funding this project and believe it will model best practices for cryptographic integrity in public-facing credential ecosystems.
+Sincerely,
+[Your Name]
+[Organization, if applicable]
+[Location or field]
+```
+
+## 📬 How to Submit
+
+- Fork this repo and submit your letter via pull request  
+- Or email your signed letter to `amerione.org@gmail.com` by **9/30/2025**
+
+Your voice helps secure validator-grade cryptography for everyone. Thank you!
+
 
 # 🛡️ EOL Doctrine: *Perpetual Relevance in Useful Software*
 
