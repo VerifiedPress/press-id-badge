@@ -85,6 +85,6 @@ and verify with the JWK,
 
 
 # Releases
-- 1.0.2 preparing for AppStore submission
+- 1.0.2 submitted for App review on August 5, 2025
 - 1.0.1 not released
 - 1.0.0 not released
