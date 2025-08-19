@@ -9,8 +9,8 @@ fi
 
 INPUT="$1"
 OUTPUT="$2"
-WIDTH=1280
-HEIGHT=800
+WIDTH=384
+HEIGHT=384
 
 # Check if sips is available
 if ! command -v sips &> /dev/null; then

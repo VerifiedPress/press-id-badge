@@ -72,7 +72,9 @@ and verify with the JWK,
 ![validate with jwk](images/validated-jwk.png)
 
 # Distribution
-
+To start the distribution, Archive the Application:
+In Xcode, select Product > Archive from the menu bar. This will build and package your application, including the Safari extension.
+![distribute-000](images/distribute-000.png)
 ![distribute-001](images/distribute-001.png)
 ![distribute-002](images/distribute-002.png)
 ![distribute-003](images/distribute-003.png)
@@ -85,6 +87,7 @@ and verify with the JWK,
 
 
 # Releases
-- 1.0.2 submitted for App review on August 5, 2025
+- 1.0.3 updated icon and resubmit for App review on August 19, 2025
+- 1.0.2 rejected for App review on August 5, 2025 for stock icon
 - 1.0.1 not released
 - 1.0.0 not released
