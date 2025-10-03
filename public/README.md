@@ -154,6 +154,7 @@ php -S 192.168.1.18:8080 -t .
 3. From your mobile device on the same network, navigate to http://192.168.1.18:8080, replacing the IP address identifyed on your network. Use http:// and **NOT** https:// when accessing the sandbox.
 
 ![mobile login](../images/mobile-no-token.png)
+
 4. You need to create a JWT for this sandbox,
 ```sh
 cd ../tools/jwk
@@ -161,12 +162,15 @@ npm install
 npm start
 ```
 a new file name *jwk* has been created.
+
 5. Refresh your mobile session,
 ![mobile login](../images/mobile-token.png)
 the token will be loaded automatically. In a production environment, you will need to copy and past the token.
+
 6. Pressing the **Validate** button
 
 ![mobile success](../images/mobile-success.png)
+
 7. To simulate an error, edit the ../tools/jwk/jwk and change the last letter and save.
 ![mobile failure](../images/mobile-failed.png)
 
