@@ -163,7 +163,9 @@ npm start
 ```
 a new file name *jwk* has been created.
 
+
 5. Refresh your mobile session,
+
 ![mobile login](../images/mobile-token.png)
 the token will be loaded automatically. In a production environment, you will need to copy and past the token.
 
