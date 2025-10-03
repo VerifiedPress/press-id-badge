@@ -20,7 +20,7 @@ class JwkVerifier
         $this->signatureHex = $signatureHex;
     }
 
-public function verify(): bool {
+    public function verify(): bool {
         try {
             // Decode inputs
             $modulus = self::base64url_decode($this->jwk['n']);
@@ -59,34 +59,6 @@ public function verify(): bool {
     public function getLastError(): ?string {
         return $this->lastError;
     }
-
-    /*
-    public function verify(): bool {
-        // Decode inputs
-        $modulus = self::base64url_decode($this->jwk['n']);
-        $exponent = self::base64url_decode($this->jwk['e']);
-        $signature = hex2bin($this->signatureHex);
-        if ($signature === false) throw new Exception("Invalid hex signature");
-
-        // Convert to big integers
-        $n = self::binToBigInt($modulus);
-        $e = self::binToBigInt($exponent);
-        $s = self::binToBigInt($signature);
-
-        // Perform RSA decryption: m = s^e mod n
-        $m = bcpowmod($s, $e, $n);
-        if ($m === null) return false;
-
-        // Convert message to SHA-256 hash
-        $expectedHash = hash('sha256', $this->message, true);
-
-        // Extract hash from decrypted message
-        $decryptedBin = self::bigIntToBin($m, strlen($modulus));
-        $hashFromSig = substr($decryptedBin, -32);
-
-        return hash_equals($expectedHash, $hashFromSig);
-    }
-    */
 
     protected static function base64url_decode(string $data): string {
         $pad = strlen($data) % 4;

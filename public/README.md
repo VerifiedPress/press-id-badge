@@ -121,7 +121,7 @@ sCXUXuMBM7EetSk4mUbjCKXN
 -----END PRIVATE KEY-----
 ```
 then paste in the extension private key field,
-![signing](src/safari/images/signing-private-key.png)
+![signing](../src/safari/images/signing-private-key.png)
 
 then press **Sign Message** button,
 
@@ -135,6 +135,40 @@ Effectively eliminating the userid-password-2fa model in the traditional sense, 
 Verification is perform on publicly accessible identity documents that were provided during a registration process.
 
 The user is required to provide a publically accessible URL for the DiD identity document with the public_key.pem file. If the user does not have a public website, the easiest option is to create a free github.com repository and an assoicated gitpage for that repository, then provide the gitpage URL to the service. Only the public_key.pem is available on git pages, keeping the private key used for signing messages locally and safe. **DO NOT UPLOAD THE PRIVATE KEY TO GITHUB!**
+
+## Quickstart on Mobile
+Keeping your **private key** on your mobile device is not secure, instead using a JSON Web Token (JWT) that is signed using your **private key**, the JWT can be authenticated against the **public key**. The payload for the JWT will contain your DID and Expiry at a minimum. See [JSON Web Token tool](https://github.com/VerifiedPress/press-id-badge/jwt) for more information.
+
+1. Obtain your local IP assigned by your router
+```sh
+ipconfig | ifconfig
+```
+results,
+```sh
+IPv4 Address. . . . . . . . . . . : 192.168.1.18
+```
+2. Start the PHP server from the public/ directory using the IP identified with port 8080,
+```sh
+php -S 192.168.1.18:8080 -t .
+```
+3. From your mobile device on the same network, navigate to http://192.168.1.18:8080, replacing the IP address identifyed on your network. Use http:// and **NOT** https:// when accessing the sandbox.
+
+![mobile login](../images/mobile-no-token.png)
+4. You need to create a JWT for this sandbox,
+```sh
+cd ../tools/jwk
+npm install
+npm start
+```
+a new file name *jwk* has been created.
+5. Refresh your mobile session,
+![mobile login](../images/mobile-token.png)
+the token will be loaded automatically. In a production environment, you will need to copy and past the token.
+6. Pressing the **Validate** button
+
+![mobile success](../images/mobile-success.png)
+7. To simulate an error, edit the ../tools/jwk/jwk and change the last letter and save.
+![mobile failure](../images/mobile-failed.png)
 
 ## Overview
 ![overview](../images/updated-blockdiagram-with-flow.png)

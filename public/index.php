@@ -1,3 +1,28 @@
+<?php
+function isMobileDevice() {
+    $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+    $mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone', 'opera mini', 'mobile'];
+
+    foreach ($mobileKeywords as $keyword) {
+        if (strpos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
+$mobile_device = isMobileDevice();
+$jwt = "[See https://github.com/VerifiedPress/press-id-badge/tools/jwt to create a signed JSON Web Token]";
+$did = "";
+
+if ($mobile_device) {
+    if (file_exists("../tools/jwt/jwt")) {
+        $jwt = file_get_contents("../tools/jwt/jwt");
+    }
+    $identity = json_decode(file_get_contents(".well-known/did.json"), true);
+    $did = $identity['id'];
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,24 +47,38 @@
             <form method="post" action="authenticate.php">
                 <p>
                     <label for="did" class="w3-text-blue"><b>Your DID</b></label>
-                    <input class="w3-input w3-border w3-light-grey" id="did" name="did" type="text" placeholder="did:web:yourdomain.com" readonly required>
+                    <input class="w3-input w3-border <?php if (!$mobile_device) echo 'w3-light-grey'; ?>" id="did" name="did" type="text" placeholder="did:web:yourdomain.com" <?php if (!$mobile_device) echo 'readonly'; ?> value="<?php echo $did; ?>" required>
                 </p>
 
-                <p>
-                    <label for="message" class="w3-text-blue"><b>Message</b></label>
-                    <input class="w3-input w3-border" id="message" name="message" type="text" value="" placeholder="Enter a message to be signed." required>
-                </p>
+                <?php if (!$mobile_device) : ?>
+                    <p>
+                        <label for="message" class="w3-text-blue"><b>Message</b></label>
+                        <input class="w3-input w3-border" id="message" name="message" type="text" value="" placeholder="Enter a message to be signed." required>
+                    </p>
+                <?php endif; ?>
 
-                <p>
-                    <label for="proof" class="w3-text-blue"><b>Signature Proof</b></label>
-                    <textarea class="w3-input w3-border w3-light-grey" rows="5" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly required></textarea>
-                </p>
+                <?php if ($mobile_device) : ?>
+                    <p>
+                        <label for="proof_jwt" class="w3-text-blue"><b>Token</b></label>
+                        <textarea class="w3-input w3-border" rows="5" id="proof_jwt" name="proof_jwt" placeholder="A user-created JWT (see https://github.com/VerifiedPress/press-id-badge/tools/jwt)" required><?php echo $jwt; ?></textarea>
+                    </p>
+                <?php else : ?>
+                    <p>
+                        <label for="proof" class="w3-text-blue"><b>Signature Proof</b></label>
+                        <textarea class="w3-input w3-border w3-light-grey" rows="5" id="proof" name="proof" placeholder="Signature of signing message placed here..." readonly <?php if (!$mobile_device) echo 'required'; ?>></textarea>
+                    </p>
+                <?php endif; ?>
 
-                <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
-                <br/>
-                <input type="submit" name="authenticate_publickey" class="w3-button w3-block w3-green" value="Validate using Public Key" />
-                <br/>
-                <input type="submit" name="authenticate_jwt" class="w3-button w3-block w3-purple" title="This is the preferred method for verifying credentials!" value="Validate using JSON Web Key (JWK)" />
+                <?php if ($mobile_device) : ?>
+                    <br/>
+                    <input type="submit" name="authenticate_jwt" class="w3-button w3-block w3-purple" value="Validate using JSON Web Token (JWT)" />
+                <?php else : ?>
+                    <button id="signButton" type="button" class="w3-button w3-blue w3-margin-top w3-block">Sign</button>
+                    <br/>
+                    <input type="submit" name="authenticate_publickey" class="w3-button w3-block w3-green" value="Validate using Public Key" />
+                    <br/>
+                    <input type="submit" name="authenticate_jwks" class="w3-button w3-block w3-purple" title="This is the preferred method for verifying credentials!" value="Validate using JSON Web Key Set(JWKS)" />
+                <?php endif; ?>
             </form>
             <fieldset>
                 <div class="w3-container">
@@ -67,35 +106,37 @@
     </div>
   </div>
     <script type="text/javascript">
-        window.onload = function() {
-            window.postMessage({command: "GET_USER_PARAMS"}, "*");
-        }
-
-        document.getElementById("signButton").addEventListener("click",async () => {
-            const message = document.getElementById("message").value;
-            if (message.length > 0) {
-                window.postMessage({ command: "SHOW_SIGNING_DIALOG", message: message }, "*");
-            } else {
-                alert("Missing message to be signed?")
+        <?php if (!$mobile_device) : ?>
+            window.onload = function() {
+                window.postMessage({command: "GET_USER_PARAMS"}, "*");
             }
-            return false;
-        });
+            
+            document.getElementById("signButton").addEventListener("click",async () => {
+                const message = document.getElementById("message").value;
+                if (message.length > 0) {
+                    window.postMessage({ command: "SHOW_SIGNING_DIALOG", message: message }, "*");
+                } else {
+                    alert("Missing message to be signed?")
+                }
+                return false;
+            });
 
-        window.addEventListener("message", async function (e) {
-            if (!e.data || typeof e.data !== "object") return;
+            window.addEventListener("message", async function (e) {
+                if (!e.data || typeof e.data !== "object") return;
 
-            if (e.data.type === "USER_PARAMS_RESPONSE") {
-                console.log(e);
-                const {did, privateKey} = e.data;
-                const didInput = document.getElementById("did");
+                if (e.data.type === "USER_PARAMS_RESPONSE") {
+                    console.log(e);
+                    const {did, privateKey} = e.data;
+                    const didInput = document.getElementById("did");
 
-                if (didInput) didInput.value = did || "";
-            } else if (e.data.type === "SIGNATURE_READY") {
-                const { signature } = e.data;
-                console.log(signature);
-                document.getElementById("proof").value = signature.signature;
-            }
-        });
+                    if (didInput) didInput.value = did || "";
+                } else if (e.data.type === "SIGNATURE_READY") {
+                    const { signature } = e.data;
+                    console.log(signature);
+                    document.getElementById("proof").value = signature.signature;
+                }
+            });
+        <?php endif; ?>
     </script>
 
 </body>

@@ -15,6 +15,7 @@ Converts an RSA public key (PEM format) into a standards-compliant JSON Web Key 
 ### Location
 
 ```sh
+tools/jwt
 tools/key2jwk/
 ```
 

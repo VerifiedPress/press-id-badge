@@ -24,7 +24,7 @@ try {
 
     if ($result['valid']) {
         unset($_SESSION['error']);
-        $_SESSION['method'] = 'Verification by JSON Web Key (JWK)';
+        $_SESSION['method'] = 'Verification by JSON Web Key Set (JWKS)';
         $_SESSION['name'] = $user['name'];
         require("error/error-success.php");
     } else {

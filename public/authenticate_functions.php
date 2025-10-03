@@ -62,4 +62,67 @@ function verifySignatureByJWK(array $jwk, string $message, string $signatureHex)
         'error' => $verifier->getLastError()
     ];
 }
+
+function verifyJWT($jwt, $remotePemUrl) {
+    // Load public key from remote URL
+    $publicKey = file_get_contents($remotePemUrl);
+    if (!$publicKey) {
+        return [
+            'valid' => 0,
+            'url' => $remotePemUrl,
+            'error' => "Unable to fetch public key from: "
+        ];
+    }
+
+    // Split JWT into parts
+    $parts = explode('.', $jwt);
+    if (count($parts) !== 3) {
+        return [
+            'valid' => 0,
+            'error' => "Invalid JWT format."
+        ];
+    }
+
+    list($headerB64, $payloadB64, $signatureB64) = $parts;
+
+    // Decode payload
+    $payloadJson = base64_decode($payloadB64);
+    $payload = json_decode($payloadJson, true);
+    if (!$payload) {
+        return [
+            'valid' => 0,
+            'error' => "Invalid JWT payload."
+        ];
+    }
+
+    // Check expiration
+    if (isset($payload['exp']) && time() > $payload['exp']) {
+        return [
+            'valid' => 0,
+            "payload" => $payload,
+            'error' => "JWT has expired."
+        ];
+    }
+
+    // Reconstruct signed data
+    $signedData = $headerB64 . '.' . $payloadB64;
+    $signature = base64_decode(strtr($signatureB64, '-_', '+/'));
+
+    // Verify signature
+    $verified = openssl_verify($signedData, $signature, $publicKey, OPENSSL_ALGO_SHA256);
+
+    if ($verified === 1) {
+        return [
+            'valid' => $verified,
+            'payload' => $payload, // Valid and unexpired
+        ];
+    } elseif ($verified === 0) {
+        return [
+            'valid' => $verified,
+            'error' => "Invalid signature."
+        ];
+    } else {
+        throw new Exception("Verification error: " . openssl_error_string());
+    }
+}
 ?>

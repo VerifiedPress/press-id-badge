@@ -7,3 +7,4 @@ php_errors.log
 web-ext-artifacts/
 images/
 ._*
+dist/
